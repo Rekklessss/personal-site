@@ -3,103 +3,161 @@ name: Deploy site
 on:
   push:
     branches:
-      - master
       - main
-    paths:
-      - "assets/**"
-      - "_sass/**"
-      - "_scripts/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
   pull_request:
     branches:
-      - master
       - main
-    paths:
-      - "assets/**"
-      - "_sass/**"
-      - "_scripts/**"
-      - "**.bib"
-      - "**.html"
-      - "**.js"
-      - "**.liquid"
-      - "**/*.md"
-      - "**.yml"
-      - "Gemfile"
-      - "Gemfile.lock"
-      - "!.github/workflows/axe.yml"
-      - "!.github/workflows/broken-links.yml"
-      - "!.github/workflows/deploy-docker-tag.yml"
-      - "!.github/workflows/deploy-image.yml"
-      - "!.github/workflows/docker-slim.yml"
-      - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
-      - "!lighthouse_results/**"
-      - "!CONTRIBUTING.md"
-      - "!CUSTOMIZE.md"
-      - "!FAQ.md"
-      - "!INSTALL.md"
-      - "!README.md"
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
 
 jobs:
-  deploy:
-    # available images: https://github.com/actions/runner-images#available-images
+  build:
     runs-on: ubuntu-latest
+    env:
+      JEKYLL_ENV: production
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Setup Ruby 💎
+
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3.5"
           bundler-cache: true
-      - name: Setup Python 🐍
+
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
-          cache: "pip" # caching pip dependencies
-      - name: Update _config.yml ⚙️
-        uses: fjogeleit/yaml-update-action@main
+          cache: "pip"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          commitChange: false
-          valueFile: "_config.yml"
-          propertyPath: "giscus.repo"
-          value: ${{ github.repository }}
-      - name: Install and Build 🔧
+          node-version: "20"
+
+      - name: Install production build dependencies
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
-          export JEKYLL_ENV=production
-          bundle exec jekyll build
-      - name: Purge unused CSS 🧹
-        run: |
           npm install -g purgecss
-          purgecss -c purgecss.config.js
-      - name: Deploy 🚀
-        if: github.event_name != 'pull_request'
-        uses: JamesIves/github-pages-deploy-action@v4
+
+      - name: Build static site
+        run: bundle exec jekyll build
+
+      - name: Purge unused CSS
+        run: purgecss -c purgecss.config.js
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
         with:
-          folder: _site
+          name: site-build
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    env:
+      DEPLOY_PATH: /var/www/thedivyanshupabia.com/current
+    steps:
+      - name: Check deploy secrets
+        id: secret_check
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          if [ -n "$EC2_HOST" ] && [ -n "$EC2_USER" ] && [ -n "$EC2_SSH_KEY" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "EC2 deploy secrets are not configured yet. Skipping deploy steps."
+          fi
+
+      - name: Download build artifact
+        if: steps.secret_check.outputs.ready == 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: _site
+
+      - name: Install rsync and SSH client
+        if: steps.secret_check.outputs.ready == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rsync openssh-client
+
+      - name: Configure SSH
+        if: steps.secret_check.outputs.ready == 'true'
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_PORT: ${{ secrets.EC2_PORT }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+        run: |
+          PORT="${EC2_PORT:-22}"
+          mkdir -p ~/.ssh
+          python3 <<'PY'
+          import base64
+          import os
+          from pathlib import Path
+
+          raw = os.environ["EC2_SSH_KEY"].strip()
+
+          if raw.startswith('"') and raw.endswith('"'):
+            raw = raw[1:-1]
+          if raw.startswith("'") and raw.endswith("'"):
+            raw = raw[1:-1]
+
+          normalized = raw.replace("\\r", "").replace("\\n", "\n").replace("\r", "")
+
+          if "BEGIN OPENSSH PRIVATE KEY" not in normalized and "BEGIN RSA PRIVATE KEY" not in normalized:
+            try:
+              decoded = base64.b64decode(normalized).decode("utf-8")
+              if "BEGIN OPENSSH PRIVATE KEY" in decoded or "BEGIN RSA PRIVATE KEY" in decoded:
+                normalized = decoded.replace("\r", "")
+            except Exception:
+              pass
+
+          Path(os.path.expanduser("~/.ssh/id_ed25519")).write_text(normalized + "\n", encoding="utf-8")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -f ~/.ssh/id_ed25519 > /dev/null
+          ssh-keyscan -p "$PORT" -H "$EC2_HOST" >> ~/.ssh/known_hosts
+
+      - name: Ensure target directory exists
+        if: steps.secret_check.outputs.ready == 'true'
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_PORT: ${{ secrets.EC2_PORT }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          if [ -z "$EC2_USER" ]; then
+            echo "EC2_USER secret must be configured."
+            exit 1
+          fi
+
+          PORT="${EC2_PORT:-22}"
+          ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -p "$PORT" "${EC2_USER}@${EC2_HOST}" "mkdir -p '${DEPLOY_PATH}'"
+
+      - name: Sync files to EC2
+        if: steps.secret_check.outputs.ready == 'true'
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_PORT: ${{ secrets.EC2_PORT }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          if [ -z "$EC2_USER" ]; then
+            echo "EC2_USER secret must be configured."
+            exit 1
+          fi
+
+          PORT="${EC2_PORT:-22}"
+          rsync -az --delete -e "ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -p $PORT" _site/ "${EC2_USER}@${EC2_HOST}:${DEPLOY_PATH}/"

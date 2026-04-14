@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 1 ]; then
+  echo 'Usage: ./bin/new-post "Post Title" [category]'
+  exit 1
+fi
+
+slugify() {
+  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g'
+}
+
+yaml_escape() {
+  printf '%s' "$1" | sed 's/"/\\"/g'
+}
+
+title="$1"
+category="$(slugify "${2:-notes}")"
+date_string="$(date +%F)"
+slug="$(slugify "$title")"
+target_file="_posts/${date_string}-${slug}.md"
+
+if [ -e "$target_file" ]; then
+  echo "Refusing to overwrite existing file: $target_file"
+  exit 1
+fi
+
+cat <<EOF > "$target_file"
+---
+layout: post
+title: "$(yaml_escape "$title")"
+date: ${date_string}
+description: "Add a one-line summary for this post."
+tags: []
+categories: [${category}]
+giscus_comments: false
+related_posts: false
+toc:
+  sidebar: right
+---
+
+Start writing here.
+EOF
+
+echo "Created ${target_file}"

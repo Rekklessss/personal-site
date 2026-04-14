@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [ "$#" -lt 2 ]; then
+  echo 'Usage: ./bin/new-project "Project Title" "Short description"'
+  exit 1
+fi
+
+slugify() {
+  printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$//g'
+}
+
+yaml_escape() {
+  printf '%s' "$1" | sed 's/"/\\"/g'
+}
+
+title="$1"
+description="$2"
+slug="$(slugify "$title")"
+target_file="_projects/${slug}.md"
+
+if [ -e "$target_file" ]; then
+  echo "Refusing to overwrite existing file: $target_file"
+  exit 1
+fi
+
+cat <<EOF > "$target_file"
+---
+layout: page
+title: "$(yaml_escape "$title")"
+description: "$(yaml_escape "$description")"
+importance: 1
+img:
+---
+
+## Overview
+
+Describe the problem, the outcome, and why this project matters.
+
+## What I Built
+
+- Add the most important implementation detail.
+- Add the constraint, tradeoff, or challenge you had to solve.
+- Add the result, impact, or lesson learned.
+
+## Stack
+
+- Add the tools, frameworks, or platforms you used.
+
+## Links
+
+- Add a live demo, repository, or write-up when available.
+EOF
+
+echo "Created ${target_file}"

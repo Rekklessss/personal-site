@@ -3,7 +3,7 @@ layout: default
 permalink: /blog/
 title: blog
 nav: true
-nav_order: 1
+nav_order: 3
 pagination:
   enabled: true
   collection: posts
@@ -101,14 +101,15 @@ pagination:
 
 {% endif %}
 
+{% if page.pagination.enabled %}
+{% assign postlist = paginator.posts %}
+{% else %}
+{% assign postlist = site.posts %}
+{% endif %}
+
+{% if postlist.size > 0 %}
+
   <ul class="post-list">
-
-    {% if page.pagination.enabled %}
-      {% assign postlist = paginator.posts %}
-    {% else %}
-      {% assign postlist = site.posts %}
-    {% endif %}
-
     {% for post in postlist %}
 
     {% if post.external_source == blank %}
@@ -188,6 +189,15 @@ pagination:
     {% endfor %}
 
   </ul>
+  {% else %}
+    <div class="card mt-3 p-4">
+      <h3 class="card-title">The blog is ready for your first post</h3>
+      <p class="card-text">
+        This section is intentionally empty right now. Use <code>npm run new:post -- "Your Title" category</code> to scaffold
+        a new post, preview it locally, and publish it when you are ready.
+      </p>
+    </div>
+  {% endif %}
 
 {% if page.pagination.enabled %}
 {% include pagination.liquid %}

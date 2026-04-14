@@ -1,4 +1,12 @@
 {
+  "scripts": {
+    "dev": "docker compose up",
+    "dev:build": "docker compose up --build",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "new:post": "./bin/new-post",
+    "new:project": "./bin/new-project"
+  },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.10.0",
     "prettier": "^3.8.0"
