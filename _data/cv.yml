@@ -1,11 +1,9 @@
 cv:
   name: Divyanshu Pabia
-  label: Software Engineer
+  headline: Software Engineer
   email: thedivyanshupabia@gmail.com
   location: Pune, India
-  image: "assets/img/prof_pic.jpg"
   website: https://www.thedivyanshupabia.com
-  summary: I build software, learn in public, and use this site to share projects, writing, and experiments.
 
   social_networks:
     - network: LinkedIn
@@ -16,6 +14,9 @@ cv:
       username: Rekklessss
 
   sections:
+    Summary:
+      - I build software, learn in public, and use this site to share projects, writing, and experiments.
+
     Projects:
       - name: Personal Website
         summary: A portfolio and blog built with Jekyll and hosted on AWS Amplify with a custom domain.
@@ -25,25 +26,9 @@ cv:
           - Local Docker preview plus simple content scaffolds for posts and projects
 
     Skills:
-      - name: Focus Areas
-        level: Strong
-        icon: fa-solid fa-code
-        keywords:
-          - Software engineering
-          - AI tooling
-          - Web development
-          - Cloud deployment
-          - Technical writing
+      - label: Focus Areas (Strong)
+        details: Software engineering, AI tooling, Web development, Cloud deployment, Technical writing
 
     Interests:
-      - name: Currently Exploring
-        icon: fa-solid fa-lightbulb
-        keywords:
-          - Machine learning
-          - Deep learning
-          - Reinforcement learning
-          - AI products
-          - Developer tools
-          - Distributed systems
-          - Personal websites
-          - Learning in public
+      - label: Currently Exploring
+        details: Machine learning, Deep learning, Reinforcement learning, AI products, Developer tools, Distributed systems, Personal websites, Learning in public
