@@ -5,7 +5,7 @@
     "image": "",
     "email": "",
     "summary": "I build software, learn in public, and use this site to share projects, writing, and experiments.",
-    "url": "https://thedivyanshupabia.com",
+    "url": "https://www.thedivyanshupabia.com",
     "location": {
       "address": "",
       "postalCode": "",
@@ -47,10 +47,10 @@
   "projects": [
     {
       "name": "Personal Website",
-      "summary": "A portfolio and blog built with Jekyll, deployed to AWS EC2, and served from a custom domain.",
+      "summary": "A portfolio and blog built with Jekyll and hosted on AWS Amplify with a custom domain.",
       "highlights": [
         "Custom domain at thedivyanshupabia.com",
-        "Automated production deploys from GitHub Actions to EC2",
+        "Automated production builds and deploys from GitHub to AWS Amplify",
         "Local Docker preview plus simple content scaffolds for posts and projects"
       ]
     }
