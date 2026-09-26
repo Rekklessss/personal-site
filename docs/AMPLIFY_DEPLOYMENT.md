@@ -9,7 +9,7 @@ This site is a static Jekyll site hosted by AWS Amplify. The Amplify app `person
 3. Push to `main`. Amplify runs the commands in [`amplify.yml`](../amplify.yml), then serves `_site/`.
 4. Check the `main` branch deployment in the [Amplify console](https://us-east-1.console.aws.amazon.com/amplify/apps/d23whgy7kx1qhm/branches/main/deployments?region=us-east-1) and open its generated URL before switching DNS.
 
-The site URL is configured in [`_config.yml`](../_config.yml) as `https://thedivyanshupabia.com`, with an empty `baseurl`.
+The site URL is configured in [`_config.yml`](../_config.yml) as `https://www.thedivyanshupabia.com`, with an empty `baseurl`. Amplify redirects the apex domain to `www`.
 
 ## Connect the Hostinger domain
 

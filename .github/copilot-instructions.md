@@ -184,7 +184,7 @@ bundle exec jekyll build
 
 - **Problem:** Site loads but has no styling
 - **Cause:** Incorrect `url` and `baseurl` in `_config.yml`
-- **Fix:** Keep `url: https://thedivyanshupabia.com` and `baseurl:` empty for this site.
+- **Fix:** Keep `url: https://www.thedivyanshupabia.com` and `baseurl:` empty for this site.
   - Clear browser cache (Ctrl+Shift+Del or private browsing)
 
 ### Prettier Formatting Failures
