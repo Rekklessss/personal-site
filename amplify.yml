@@ -10,10 +10,12 @@ frontend:
         - bundle config set --local path vendor/bundle
         - bundle install --jobs 4 --retry 3
         - python3 -m pip install --user --upgrade nbconvert
+        - export PATH="$HOME/.local/bin:$PATH"
+        - "$HOME/.local/bin/jupyter nbconvert --version"
         - npm install --global purgecss@7.0.2
     build:
       commands:
-        - JEKYLL_ENV=production bundle exec jekyll build
+        - PATH="$HOME/.local/bin:$PATH" JEKYLL_ENV=production bundle exec jekyll build
         - purgecss -c purgecss.config.js
   artifacts:
     baseDirectory: _site

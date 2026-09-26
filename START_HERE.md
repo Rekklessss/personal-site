@@ -4,7 +4,7 @@ This repo powers `thedivyanshupabia.com`.
 
 ## Project-specific guides
 
-- [EC2 deployment guide](docs/EC2_DEPLOYMENT.md)
+- [Amplify deployment guide](docs/AMPLIFY_DEPLOYMENT.md)
 - [Content workflow](docs/CONTENT_WORKFLOW.md)
 
 ## Files you will edit most

@@ -153,7 +153,9 @@ To see the template running, open your browser and go to `http://localhost:4000`
 
 ## Deployment
 
-Deploying your website to [GitHub Pages](https://pages.github.com/) is the most popular option.
+For this repository's live site, use the [AWS Amplify deployment guide](docs/AMPLIFY_DEPLOYMENT.md). The GitHub Pages instructions below describe the upstream al-folio template and are not configured here.
+
+Deploying your website to [GitHub Pages](https://pages.github.com/) is a common option for a new al-folio installation.
 Starting version [v0.3.5](https://github.com/alshedivat/al-folio/releases/tag/v0.3.5), **al-folio** will automatically re-deploy your webpage each time you push new changes to your repository **main branch**! :sparkles:
 
 ### For personal and organization webpages
@@ -179,7 +181,7 @@ Starting version [v0.3.5](https://github.com/alshedivat/al-folio/releases/tag/v0
 4. Wait for a few minutes and let the action complete. You can see the progress in the **Actions** tab. If completed successfully, in addition to the `main` branch, your repository should now have a newly built `gh-pages` branch. **Do NOT touch this branch!**
 5. Finally, in the **Settings** of your repository, in the Pages section, set the branch to `gh-pages` (**NOT** to `main`). For more details, see [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source).
 
-If you keep your site on another branch, open `.github/workflows/deploy.yml` **on the branch you keep your website on** and change `on->push->branches` and `on->pull\_request->branches` to the branch you keep your website on. This will trigger the action on pulls/pushes on that branch. The action will then deploy the website on the branch it was triggered from.
+For a new GitHub Pages installation, add the upstream al-folio deployment workflow and set its source branch to the branch you use for content.
 
 ### Manual deployment to GitHub Pages
 
@@ -196,10 +198,10 @@ If you need to manually re-deploy your website to GitHub pages, go to Actions, c
    - Set **Publish directory** to `_site`
 
 4. Netlify: Add the following two **environment variables**
-   - | Key            | Value                                                                                  |
-     | -------------- | -------------------------------------------------------------------------------------- |
-     | `JEKYLL_ENV`   | `production`                                                                           |
-     | `RUBY_VERSION` | set to the Ruby version found in `.github/workflows/deploy.yml` (for example, `3.3.5`) |
+   - | Key            | Value          |
+     | -------------- | -------------- |
+     | `JEKYLL_ENV`   | `production`   |
+     | `RUBY_VERSION` | set to `3.3.5` |
 
 5. Netlify: Click **Deploy** and wait for the site to be published. If you want to use your own domain name, follow the steps in [this documentation](https://docs.netlify.com/domains-https/custom-domains/).
 

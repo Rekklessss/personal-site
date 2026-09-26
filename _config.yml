@@ -12,7 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal portfolio, projects, and writing by Divyanshu Pabia.
 footer_text: >
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
-  Deployed on <a href="https://aws.amazon.com/ec2/" target="_blank">AWS EC2</a>.
+  Hosted with <a href="https://aws.amazon.com/amplify/hosting/" target="_blank">AWS Amplify</a>.
 keywords: divyanshu pabia, software engineer, portfolio, blog, projects
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: "\u269B\uFE0F" # the emoji used as the favicon (alternatively, provide image name in /assets/img/)

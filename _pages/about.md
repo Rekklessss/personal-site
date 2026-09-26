@@ -9,7 +9,6 @@ profile:
   more_info: >
     <p>Pune, MH, India - 411021</p>
 subtitle: Software engineer, builder, and lifelong learner.
-
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -32,4 +31,4 @@ I’m using it as a living portfolio: a place for selected projects, technical w
 
 ## Right now
 
-I’m setting this site up to be easy to maintain: write locally, preview with Docker, push to GitHub, and let GitHub Actions deploy the static site to AWS EC2 behind my custom domain.
+I’m keeping this site easy to maintain: write locally, preview with Docker, and push to GitHub. AWS Amplify builds and publishes each update automatically.

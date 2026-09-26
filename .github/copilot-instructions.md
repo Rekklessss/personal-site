@@ -123,19 +123,16 @@ When making changes:
 
 ### GitHub Workflows (in `.github/workflows/`)
 
-- **deploy.yml** – Main deployment workflow (runs on push/PR to main/master)
-  - Sets up Ruby 3.3.5, Python 3.13
-  - Installs imagemagick, nbconvert
-  - Runs `bundle exec jekyll build` with JEKYLL_ENV=production
-  - Runs purgecss for CSS optimization
-  - Commits built site to gh-pages branch
-  - **Triggers on:** Changes to site files, assets, config (NOT documentation files alone)
+- **amplify.yml** – AWS Amplify builds and publishes the static site on pushes to `main`.
+  - Installs Ruby, ImageMagick, and notebook conversion tools
+  - Runs Jekyll with `JEKYLL_ENV=production`, then PurgeCSS
+  - Publishes the `_site` directory
 - **prettier.yml** – Code formatting validation (mandatory)
   - Runs prettier on all files
   - **Fails PRs if code is not properly formatted**
   - Generates HTML diff artifact on failure
   - Must install prettier locally to avoid failures: `npm install prettier @shopify/prettier-plugin-liquid`
-- **broken-links.yml, broken-links-site.yml** – Link validation
+- **broken-links.yml** – Link validation
 - **axe.yml** – Accessibility testing
 - **codeql.yml** – Security scanning
 - **update-citations.yml** – Automatic citation updates
@@ -179,17 +176,15 @@ bundle exec jekyll build
 
 ### "Unknown tag 'toc'" Error on Deployment
 
-- **Problem:** Deploy succeeds locally but fails on GitHub Actions
-- **Cause:** Jekyll plugins don't load properly
-- **Solution:** Verify gh-pages branch is set as deployment source in Settings → Pages
+- **Problem:** A local build succeeds but the Amplify build fails.
+- **Cause:** Jekyll plugins did not install or load in the Amplify build image.
+- **Solution:** Check the Amplify build logs and the `bundle install` step in `amplify.yml`.
 
 ### CSS/JS Not Loading After Deploy
 
 - **Problem:** Site loads but has no styling
 - **Cause:** Incorrect `url` and `baseurl` in `_config.yml`
-- **Fix:**
-  - Personal site: `url: https://username.github.io`, `baseurl:` (empty)
-  - Project site: `url: https://username.github.io`, `baseurl: /repo-name/`
+- **Fix:** Keep `url: https://thedivyanshupabia.com` and `baseurl:` empty for this site.
   - Clear browser cache (Ctrl+Shift+Del or private browsing)
 
 ### Prettier Formatting Failures

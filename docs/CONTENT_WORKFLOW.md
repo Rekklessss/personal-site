@@ -6,7 +6,7 @@ This repo is set up so the day-to-day workflow stays simple:
 2. Preview the site with Docker.
 3. Format the repo.
 4. Push to `main`.
-5. Let GitHub Actions deploy the built static site to EC2.
+5. Let AWS Amplify build and publish the site from `main`.
 
 ## Local preview
 
@@ -37,7 +37,7 @@ After that:
 ## Create a project page
 
 ```bash
-npm run new:project -- "Personal Portfolio" "Jekyll portfolio deployed to AWS EC2 with GitHub Actions"
+npm run new:project -- "Personal Portfolio" "Jekyll portfolio hosted with AWS Amplify"
 ```
 
 That creates a file in `_projects/` with a starter structure you can fill in.
@@ -52,7 +52,7 @@ git commit -m "feat: publish new blog post"
 git push origin main
 ```
 
-Once the push lands on `main`, the deploy workflow builds the site and syncs `_site/` to EC2.
+Once the push lands on `main`, Amplify reads `amplify.yml`, builds the site, and publishes `_site/`. Check the deployment status in the Amplify console.
 
 ## Recommended writing rhythm
 
