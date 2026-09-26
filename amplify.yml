@@ -6,6 +6,8 @@ frontend:
         - sudo yum install -y ImageMagick
         - rvm install 3.3.5
         - rvm use 3.3.5
+        - export LANG=C.UTF-8 LC_ALL=C.UTF-8
+        - ruby -e 'abort "Ruby needs UTF-8" unless Encoding.default_external == Encoding::UTF_8'
         - gem install bundler -v 4.0.4 --no-document
         - bundle config set --local path vendor/bundle
         - bundle install --jobs 4 --retry 3
@@ -15,7 +17,7 @@ frontend:
         - npm install --global purgecss@7.0.2
     build:
       commands:
-        - PATH="$HOME/.local/bin:$PATH" JEKYLL_ENV=production bundle exec jekyll build
+        - PATH="$HOME/.local/bin:$PATH" LANG=C.UTF-8 LC_ALL=C.UTF-8 JEKYLL_ENV=production bundle exec jekyll build
         - purgecss -c purgecss.config.js
   artifacts:
     baseDirectory: _site
