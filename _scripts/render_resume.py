@@ -36,6 +36,7 @@ def main():
     content = typst_file.read_text()
     profiles = {entry["network"]: entry["username"] for entry in cv["social_networks"]}
     contacts = [
+        ("globe", cv["website"]),
         ("envelope", f"mailto:{cv['email']}"),
         ("linkedin", f"https://www.linkedin.com/in/{profiles['LinkedIn']}/"),
         ("x-twitter", f"https://x.com/{profiles['X']}"),

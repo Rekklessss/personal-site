@@ -3,6 +3,10 @@
   <h3 class="card-title font-weight-medium">{{ person.name }}</h3>
   <p>{{ person.headline | default: person.label }}</p>
   <div class="resume-contact-links" aria-label="Contact and profiles">
+    {% assign website = person.website | default: person.url %}
+    {% if website %}
+      <a href="{{ website }}" aria-label="Website" title="Website"><i class="fa-solid fa-globe" aria-hidden="true"></i></a>
+    {% endif %}
     <a href="mailto:{{ person.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
     {% assign profiles = person.social_networks | default: person.profiles %}
     {% for profile in profiles %}
