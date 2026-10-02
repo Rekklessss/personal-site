@@ -9,6 +9,10 @@ on:
       - "assets/rendercv/design.yaml"
       - "assets/rendercv/locale.yaml"
       - "assets/rendercv/settings.yaml"
+      - "_data/organizations.yml"
+      - "_scripts/render_resume.py"
+      - "assets/img/*logo*"
+      - "assets/img/Tech_Analogy.png"
   workflow_call:
   workflow_dispatch:
 permissions:
@@ -43,7 +47,7 @@ jobs:
             exit 1
           fi
           rm -f assets/rendercv/rendercv_output/*
-          rendercv render $cv_file --settings $settings
+          python _scripts/render_resume.py
           rm -f assets/rendercv/rendercv_output/*.typ
       - name: Upload rendercv_output as an artifact
         uses: actions/upload-artifact@v4
@@ -54,7 +58,7 @@ jobs:
         run: |
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git add -A
+          git add assets/rendercv/rendercv_output/Divyanshu_Pabia_CV.pdf
           if git diff --cached --quiet; then
             echo "No RenderCV output changes to commit."
             exit 0

@@ -1,0 +1,53 @@
+- company: The Tor Project
+  position: Network Health Team
+  start_date: 2025-08
+  end_date: 2026-07
+  location: Remote Contract
+  highlights:
+    - Contributed to reimplementing the Java Tor Metrics Library in Rust to retrieve, parse, and validate network descriptors from CollecTor, focusing on memory safety and extensible parsing.
+    - Worked on a unified descriptor pipeline using object storage, a dedicated parser service, and PostgreSQL and VictoriaMetrics exports to support historical and real-time network analysis.
+- company: Infosys
+  position: iOS and backend development intern
+  start_date: 2024-03
+  end_date: 2025-02
+  location: Mysuru, Karnataka
+  highlights:
+    - Built a Hospital Management System with a Swift iOS client and Java/Spring Boot REST APIs for staff management, bookings, and real-time
+      updates. Implemented JWT authentication and role-based access.
+    - Containerized backend services with Docker and supported test/staging CI/CD. Strengthened API design, OpenAPI documentation, and
+      verification through JUnit 5 and integration tests.
+- company: iOS App Development Centre
+  position: Apple and Infosys iOS App Development Program
+  start_date: 2023-03
+  end_date: 2024-03
+  location: Chennai, Tamil Nadu
+  highlights:
+    - Built Gamergrid through the Apple and Infosys program, integrating esports events, scores, and news into a Swift iOS app. Developed
+      practical skills in URLSession, Combine, REST API integration, pagination, and resilient data fetching.
+- company: Next Tech Lab · McCarthy Lab
+  position: Student member · AI and machine learning
+  location: Chennai, Tamil Nadu
+  summary: Explored supervised learning, NLP, and reinforcement learning for game-playing tasks.
+  start_date: 2022-09
+  end_date: 2024-01
+  highlights:
+    - Explored supervised learning and NLP tasks within the lab's AI and machine-learning community.
+    - Gained exposure to reinforcement learning through game-playing problems.
+- company: Tech Analogy
+  position: Software development intern
+  start_date: 2022-02
+  end_date: 2022-07
+  location: Chennai, Tamil Nadu
+  highlights:
+    - Built an expense-management backend with Spring Boot and Hibernate, using Kafka and RabbitMQ for asynchronous communication. Gained
+      hands-on experience in transaction processing, microservices, and event-driven design.
+- company: Revenant Esports
+  position: Competitive Call of Duty Mobile player
+  summary: Competitive Call of Duty Mobile career across Force 1, Mindfreak, and Revenant rosters. Qualified for the World Championship
+    in 2020 and 2021.
+  location: Mumbai, Maharashtra
+  start_date: 2020-06
+  end_date: 2022-11
+  highlights:
+    - Competed in Call of Duty Mobile from June 2020 to November 2022 across Force 1, Mindfreak, and Revenant rosters.
+    - Qualified for the Call of Duty Mobile World Championship in 2020 and 2021 with my teams.

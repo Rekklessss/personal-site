@@ -26,7 +26,7 @@ All commit messages should follow this format:
 ```
 feat: Add dark mode toggle button to header
 fix: Correct baseurl in project site configuration
-docs: Update INSTALL.md with Docker troubleshooting
+docs: Update README.md with Docker troubleshooting
 style: Format all Liquid templates with Prettier
 config: Enable blog section in _config.yml
 chore: Update Jekyll dependencies with bundle update --all
@@ -42,6 +42,6 @@ chore: Update Jekyll dependencies with bundle update --all
 
 - Build outputs (`_site/`, `.jekyll-cache/`)
 - Dependencies (`node_modules/`, `vendor/`)
-- OS-specific files (`.DS_store`)
+- OS-specific files (`.DS_Store`)
 - Editor temporary files (`.idea/`, `.swp`, `.swo`)
 - Secrets and API keys (never commit credentials)

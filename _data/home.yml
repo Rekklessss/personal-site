@@ -1,0 +1,63 @@
+experience:
+  - company: The Tor Project
+    role: Network Health Team
+    period: Aug 2025 – Jul 2026
+    summary: Contributed to the Rust reimplementation of Tor Metrics Library and a descriptor pipeline connecting CollecTor, object storage, PostgreSQL, and VictoriaMetrics.
+    location: Remote Contract
+  - company: Infosys
+    role: iOS and backend development intern
+    period: Mar 2024 – Feb 2025
+    summary: Built a Swift hospital-management app and Spring Boot APIs with authentication, Docker, and automated tests.
+    location: Mysuru, Karnataka
+  - company: iOS App Development Centre
+    role: Apple and Infosys iOS App Development Program
+    period: Mar 2023 – Mar 2024
+    summary: Built Gamergrid in Swift and integrated esports data through REST APIs, URLSession, and Combine.
+    location: Chennai, Tamil Nadu
+  - company: Next Tech Lab · McCarthy Lab
+    role: Student member · AI and machine learning
+    period: Sep 2022 – Jan 2024
+    summary: Explored supervised learning, NLP, and reinforcement learning for game-playing tasks.
+    location: Chennai, Tamil Nadu
+  - company: Tech Analogy
+    role: Software development intern
+    period: Feb – Jul 2022
+    summary: Built an expense-management backend with Spring Boot and Hibernate, using Kafka and RabbitMQ for asynchronous messaging.
+    location: Chennai, Tamil Nadu
+  - company: Revenant Esports
+    role: Competitive Call of Duty Mobile player
+    period: Jun 2020 – Nov 2022
+    location: Mumbai, Maharashtra
+    summary: Competed across Force 1, Mindfreak, and Revenant rosters, qualifying for the World Championship in 2020 and 2021 with my teams.
+projects:
+  - title: Linux kernel exploration
+    url: /projects/linux-lifo-driver/
+    github: https://github.com/Rekklessss/Tinkering-The-Linux-Kernel
+    summary: Implemented a virtual LIFO character device as a Linux kernel module, exploring device state and the user/kernel boundary.
+    technologies: C · Linux kernel
+  - title: ARM processor in VHDL
+    url: /projects/arm-cpu/
+    github: https://github.com/Rekklessss/ARMv4T-CPU-Implementation
+    summary: Built an ARM instruction subset in VHDL, connecting instruction decoding, datapath behavior, and control logic.
+    technologies: VHDL · Computer architecture
+  - title: GeoGPT-RAG
+    url: /projects/geogpt-rag/
+    github: https://github.com/Rekklessss/geogpt-rag
+    summary: Developed a geospatial assistant prototype that connects language-model interaction and retrieval with spatial data and GIS
+      tools.
+    technologies: Python · TypeScript · RAG
+  - title: Gamergrid
+    url: /projects/gamergrid/
+    github: https://github.com/Rekklessss/Gamergrid
+    summary: Built a Swift esports app with live scores, events, and news, integrating REST APIs through URLSession and Combine.
+    technologies: Swift · iOS
+  - title: State estimation and localization
+    url: /projects/state-estimation/
+    github: https://github.com/Rekklessss/State-Estimation
+    summary: Explored state estimation from noisy observations through Kalman filters, landmark localization, and data association in simulation.
+    technologies: State estimation · Simulation
+  - title: Merge sort in ARM assembly
+    url: /projects/merge-sort-assembly/
+    github: https://github.com/Rekklessss/Merge-Sort-In-Assembly
+    summary: Implemented lexicographic merge sort for strings in ARM assembly, with input handling, string comparison, and simulation in ARMSim.
+    technologies: ARM assembly · Algorithms · ARMSim

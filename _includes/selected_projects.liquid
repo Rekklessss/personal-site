@@ -1,0 +1,21 @@
+<ul class="home-project-list">
+  {% for project in site.data.home.projects %}
+    <li>
+      <div class="home-entry-heading">
+        <h3>
+          <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
+        </h3>
+        <a class="home-code-link" href="{{ project.github }}" aria-label="{{ project.title }} source on GitHub" title="View source on GitHub"
+          ><i class="fa-brands fa-github" aria-hidden="true"></i
+        ></a>
+      </div>
+      <p>{{ project.summary }}</p>
+      <div class="home-technologies">
+        {% assign technologies = project.technologies | split: ' · ' %}
+        {% for technology in technologies -%}
+          <span>{{ technology }}</span>
+        {%- endfor %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

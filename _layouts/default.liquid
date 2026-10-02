@@ -17,6 +17,9 @@
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    {% if page.home_profile %}
+      {% include intro.liquid %}
+    {% endif %}
     <!-- Header -->
     {% include header.liquid %}
 
@@ -46,9 +49,6 @@
         {{ content }}
       {% endif %}
     </div>
-
-    <!-- Footer -->
-    {% include footer.liquid %}
 
     <!-- JavaScripts -->
     {% include scripts.liquid %}

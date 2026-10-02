@@ -1,0 +1,79 @@
+.projects .card-title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.repository-group {
+  margin: 2rem 0;
+
+  h2,
+  h3 {
+    border-bottom: 1px solid var(--global-divider-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.55rem;
+  }
+}
+
+.repository-list {
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.repository-item {
+  background: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.5rem;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+
+  p {
+    color: var(--global-text-color);
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin: 0.4rem 0 0;
+  }
+}
+
+.repository-item-heading {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+
+  a {
+    font-weight: 600;
+    overflow-wrap: anywhere;
+  }
+}
+
+.repository-badge {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  color: var(--global-text-color-light);
+  font-size: 0.7rem;
+  padding: 0.05rem 0.45rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 767px) {
+  .repository-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+#selected-projects {
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+#more-projects-and-experiments {
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
+}
+.project-index .repository-group {
+  margin: 2.5rem 0;
+}

@@ -10,7 +10,7 @@ FROM ruby:slim
 ENV DEBIAN_FRONTEND noninteractive
 
 LABEL authors="Amir Pourmand,George Araújo" \
-      description="Docker image for al-folio academic template" \
+      description="Docker image for personal-site academic template" \
       maintainer="Amir Pourmand"
 
 # uncomment these if you are having this issue with the build:

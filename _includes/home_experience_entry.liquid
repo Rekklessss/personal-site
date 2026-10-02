@@ -1,0 +1,14 @@
+<li>
+  <div class="home-entry-heading">
+    <h3 class="organization-name">
+      {% include organization_logo.liquid company=include.role.company %}
+      {{ include.role.company }}
+    </h3>
+    <div class="experience-meta">
+      <span class="home-period">{{ include.role.period }}</span>
+      <span class="experience-location">{{ include.role.location }}</span>
+    </div>
+  </div>
+  <p class="home-role">{{ include.role.role }}</p>
+  <p class="home-role-summary">{{ include.role.summary }}</p>
+</li>

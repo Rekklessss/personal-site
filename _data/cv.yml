@@ -1,10 +1,9 @@
 cv:
   name: Divyanshu Pabia
-  headline: Software Engineer
+  headline: Systems Engineer · AI Systems at Scale
   email: thedivyanshupabia@gmail.com
   location: Pune, India
-  website: https://www.thedivyanshupabia.com
-
+  website: https://thedivyanshupabia.com
   social_networks:
     - network: LinkedIn
       username: thedivyanshupabia
@@ -12,23 +11,98 @@ cv:
       username: thedivyanshup
     - network: GitHub
       username: Rekklessss
-
   sections:
     Summary:
-      - I build software, learn in public, and use this site to share projects, writing, and experiments.
-
-    Projects:
-      - name: Personal Website
-        summary: A portfolio and blog built with Jekyll and hosted on AWS Amplify with a custom domain.
+      - I am focused on understanding and improving the systems that run modern AI models, from **GPU kernels** and memory behavior to compilers,
+        **inference runtimes**, and **distributed execution**. I enjoy reading systems code, profiling bottlenecks, and building experiments that
+        turn performance questions into measurable results. My background spans backend engineering, iOS development, and network-monitoring software
+        for Tor, and I am now specializing in AI systems, GPU computing, and **efficient LLM inference**.
+    Experience:
+      - company: The Tor Project
+        position: Network Health Team
+        start_date: 2025-08
+        end_date: 2026-07
+        location: Remote Contract
         highlights:
-          - Custom domain at thedivyanshupabia.com
-          - Automated production builds and deploys from GitHub to AWS Amplify
-          - Local Docker preview plus simple content scaffolds for posts and projects
-
+          - Contributed to reimplementing the **Java Tor Metrics Library** in **Rust** to retrieve, parse, and validate network descriptors from CollecTor,
+            focusing on memory safety and extensible parsing.
+          - Worked on a unified descriptor pipeline using object storage, a dedicated parser service, and **PostgreSQL and VictoriaMetrics** exports
+            to support historical and real-time network analysis.
+      - company: Infosys
+        position: iOS and backend development intern
+        start_date: 2024-03
+        end_date: 2025-02
+        location: Mysuru, Karnataka
+        highlights:
+          - Built a Hospital Management System with a Swift iOS client and **Java/Spring Boot REST APIs** for staff management, bookings, and real-time
+            updates. Implemented **JWT authentication** and role-based access.
+          - Containerized backend services with **Docker** and supported test/staging CI/CD. Strengthened API design, OpenAPI documentation, and verification
+            through JUnit 5 and integration tests.
+      - company: iOS App Development Centre
+        position: Apple and Infosys iOS App Development Program
+        start_date: 2023-03
+        end_date: 2024-03
+        location: Chennai, Tamil Nadu
+        highlights:
+          - Built Gamergrid through the Apple and Infosys program, integrating esports events, scores, and news into a Swift iOS app. Developed practical
+            skills in **URLSession, Combine**, REST API integration, pagination, and resilient data fetching.
+      - company: Tech Analogy
+        position: Software development intern
+        start_date: 2022-02
+        end_date: 2022-07
+        location: Chennai, Tamil Nadu
+        highlights:
+          - Built an expense-management backend with **Spring Boot and Hibernate**, using **Kafka and RabbitMQ** for asynchronous communication. Gained
+            hands-on experience in transaction processing, microservices, and event-driven design.
+    Education:
+      - institution: SRM Institute of Science and Technology
+        area: Computer Science and Engineering
+        degree: B.Tech
+        start_date: 2021-09
+        end_date: 2025-06
+        location: Chennai, India
+        summary: "CGPA: 8.5/10."
+    Projects:
+      - name: GeoGPT-RAG
+        summary: Developed a geospatial assistant prototype combining **retrieval over reference material**, language-model interaction, and GIS
+          tooling. Explored how to connect natural-language requests with spatial data and tools while keeping analysis steps inspectable.
+        url: https://github.com/Rekklessss/geogpt-rag
+        github: https://github.com/Rekklessss/geogpt-rag
+      - name: Linux virtual LIFO device
+        summary: Implemented a virtual last-in, first-out character device as a loadable **Linux kernel module**. Worked with module and device
+          interfaces, device-state management, and the user/kernel boundary to understand how applications interact with kernel-backed services.
+        url: https://github.com/Rekklessss/Tinkering-The-Linux-Kernel
+        github: https://github.com/Rekklessss/Tinkering-The-Linux-Kernel
+      - name: ARM microarchitecture in VHDL
+        summary: Built a **VHDL microarchitecture** that executes a subset of ARM instructions, connecting instruction decoding, datapath behavior,
+          and control logic. Developed a practical understanding of how instruction semantics map to hardware execution.
+        url: https://github.com/Rekklessss/ARMv4T-CPU-Implementation
+        github: https://github.com/Rekklessss/ARMv4T-CPU-Implementation
+      - name: Gamergrid
+        summary: Built a native Swift app for following esports events, live scores, match statistics, and personalized news. Integrated **third-party
+          REST APIs** using URLSession and Combine, with attention to pagination, resilient networking, and a responsive mobile interface.
+        url: https://github.com/Rekklessss/Gamergrid
+        github: https://github.com/Rekklessss/Gamergrid
+    Publications:
+      - title: A Decentralized Blockchain Framework for Secure, Transparent and Privacy-Preserving Toll Payment Systems
+        authors:
+          - Divyanshu Pabia
+          - Manasvi Rao Kanukolan
+          - A. Anbarasi
+        journal: 2025 International Conference on Smart & Sustainable Technology (INCSST)
+        date: 2025-07
+        doi: 10.1109/INCSST64791.2025.11210370
+        url: https://doi.org/10.1109/INCSST64791.2025.11210370
     Skills:
-      - label: Focus Areas (Strong)
-        details: Software engineering, AI tooling, Web development, Cloud deployment, Technical writing
-
-    Interests:
-      - label: Currently Exploring
-        details: Machine learning, Deep learning, Reinforcement learning, AI products, Developer tools, Distributed systems, Personal websites, Learning in public
+      - label: Programming and systems
+        details: C/C++, Python, Java, Rust, Linux, Git, CMake
+      - label: ML systems
+        details: PyTorch, JAX, Transformers, torch.compile, vLLM
+      - label: GPU and performance
+        details: CUDA C++, Triton, parallel computing, profiling, Nsight Systems / Compute
+      - label: Backend and cloud
+        details: Spring Boot, PostgreSQL, REST APIs, AWS, Docker, Kubernetes, Terraform
+      - label: iOS development
+        details: Swift, Xcode, URLSession, Combine
+      - label: Mathematics
+        details: Linear algebra, probability, calculus, optimization

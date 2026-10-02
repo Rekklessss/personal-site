@@ -1,0 +1,144 @@
+.cv .card,
+.projects .card {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.cv .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cv .badge {
+  background-color: var(--global-code-bg-color) !important;
+  color: var(--global-text-color) !important;
+  box-shadow: none;
+}
+
+.cv .list-group-item {
+  background-color: transparent;
+}
+
+.cv .table-cv td {
+  color: var(--global-text-color);
+}
+
+.post-header .fa-file-pdf {
+  font-size: 1.75rem;
+}
+
+.experience-heading .organization-name {
+  font-size: 1.2rem;
+}
+
+.projects .col {
+  margin-bottom: 1rem;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.experience-location {
+  font-size: 0.8rem;
+  color: var(--global-text-color);
+}
+
+.blog-empty {
+  border: 1px solid var(--global-divider-color);
+  border-radius: 12px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  margin: 2rem 0;
+
+  > i {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+}
+
+.skills-widget .skill-filter span,
+.skills-widget .skill-filter i {
+  color: inherit;
+}
+
+.cv-project-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+
+  .title {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cv-project-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.resume-contact p {
+  margin-bottom: 0.8rem;
+}
+
+.resume-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    font-size: 1.25rem;
+    color: var(--global-text-color);
+
+    &:hover {
+      color: var(--global-theme-color);
+      background: var(--global-code-bg-color);
+    }
+  }
+}
+
+.experience-highlights {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+
+  li + li {
+    margin-top: 0.4rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .experience-meta {
+    align-items: flex-start;
+  }
+
+  .experience-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -6,14 +6,14 @@ applyTo: "**/*.liquid"
 
 ## Liquid Template Basics
 
-This al-folio repository uses Liquid templating extensively. When modifying `.liquid` files:
+This personal-site repository uses Liquid templating extensively. When modifying `.liquid` files:
 
 ### Key Directories
 
 - `_includes/` – Reusable template components (imported with `{% include %}`)
 - `_layouts/` – Page layout templates (specified in frontmatter with `layout: name`)
 
-### Common Liquid Tags in al-folio
+### Common Liquid Tags in personal-site
 
 - `{% include filename.liquid %}` – Includes template component
 - `{% for item in collection %}...{% endfor %}` – Loops
@@ -24,14 +24,14 @@ This al-folio repository uses Liquid templating extensively. When modifying `.li
 - `| date: format` – Date filtering
 - `| where: "key", "value"` – Collection filtering
 
-### Important al-folio Liquid Components
+### Important personal-site Liquid Components
 
 - `_includes/citation.liquid` – Bibliography entry rendering
 - `_includes/distill_scripts.liquid` – Distill.pub specific scripts
 - `_includes/footer.liquid` – Site footer
 - `_includes/head.liquid` – Page <head> section
 - `_includes/header.liquid` – Site header/navigation
-- `_includes/projects.liquid` – Project display
+- `_includes/selected_projects.liquid` – Shared selected project cards
 - `_includes/scripts.liquid` – Global scripts
 - `_includes/selected_papers.liquid` – Featured publications display
 
@@ -49,7 +49,7 @@ Prettier with `@shopify/prettier-plugin-liquid` enforces formatting:
 ### Modifying Site Header/Navigation
 
 - Edit `_includes/header.liquid`
-- Add links to navigation array in `_config.yml` (see yaml-configuration.instructions.md)
+- Set navigation in page front matter (`nav`, `nav_order`, `permalink`)
 - Test by viewing site in browser: `docker compose up` → http://localhost:8080
 
 ### Adding a New Component Include

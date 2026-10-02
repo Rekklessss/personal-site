@@ -6,7 +6,7 @@ applyTo: "_scripts/**/*.js"
 
 ## Overview
 
-The `_scripts/` directory contains JavaScript files that provide frontend functionality for the al-folio website. These scripts handle:
+The `_scripts/` directory contains JavaScript files that provide frontend functionality for the personal-site website. These scripts handle:
 
 - **Search functionality** – Ninja-keys integration for search bar
 - **Analytics setup** – Google Analytics, Cronitor, Open Panel integrations
@@ -60,7 +60,7 @@ permalink: /assets/js/filename.js
 - `.js` files – Processed normally, passed through to assets directory
 - **Note:** Files in `_scripts/` are ignored by Prettier (see `.prettierignore`) because `.liquid.js` files mix Liquid template syntax with JavaScript, which Prettier doesn't support
 
-## JavaScript Patterns in al-folio
+## JavaScript Patterns in personal-site
 
 ### Liquid + JavaScript Mixing (in `.liquid.js` files)
 

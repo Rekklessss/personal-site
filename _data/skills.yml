@@ -1,0 +1,202 @@
+categories:
+  - id: performance
+    label: AI Systems Performance Engineering
+    icon: fa-gauge-high
+  - id: gpu
+    label: GPU Computing
+    icon: fa-microchip
+  - id: ml
+    label: ML Systems
+    icon: fa-brain
+  - id: backend
+    label: Backend Engineering
+    icon: fa-server
+  - id: cloud
+    label: Cloud & DevOps
+    icon: fa-cloud
+  - id: ios
+    label: iOS App Development
+    icon: fa-mobile-screen-button
+  - id: mathematics
+    label: Mathematics
+    icon: fa-square-root-variable
+items:
+  - name: C/C++
+    icon: fa-solid fa-code
+    category: gpu
+    status: Working knowledge
+    core: true
+  - name: CUDA C++
+    icon: fa-solid fa-microchip
+    category: gpu
+    status: Currently studying
+    core: true
+  - name: Triton
+    icon: fa-solid fa-microchip
+    category: gpu
+    status: Currently studying
+    core: true
+  - name: Parallel Computing
+    icon: fa-solid fa-diagram-project
+    category: gpu
+    status: Currently studying
+    core: true
+  - name: GPU architecture
+    category: gpu
+    status: Currently studying
+  - name: NCCL
+    category: gpu
+    status: Currently studying
+  - name: CMake
+    category: gpu
+    status: Currently studying
+  - name: Python
+    icon: fa-brands fa-python
+    category: ml
+    status: Working knowledge
+    core: true
+  - name: PyTorch
+    icon: fa-solid fa-fire
+    category: ml
+    status: Working knowledge
+    core: true
+  - name: JAX
+    icon: fa-solid fa-diagram-project
+    category: ml
+    status: Currently studying
+    core: true
+  - name: LLM Inference
+    category: ml
+    status: Currently studying
+    core: true
+  - name: vLLM
+    category: ml
+    status: Currently studying
+  - name: Transformer architecture
+    category: ml
+    status: Currently studying
+  - name: Hugging Face Transformers
+    category: ml
+    status: Currently studying
+    icon: fa-solid fa-cubes
+  - name: torch.compile
+    category: ml
+    status: Currently studying
+  - name: NumPy
+    category: ml
+    status: Working knowledge
+  - name: scikit-learn
+    category: ml
+    status: Working knowledge
+  - name: Distributed Systems
+    category: performance
+    status: Currently studying
+    core: true
+  - name: Memory systems
+    category: performance
+    status: Currently studying
+    icon: fa-solid fa-memory
+  - name: Concurrency
+    category: performance
+    status: Currently studying
+    icon: fa-solid fa-diagram-project
+  - name: Linux
+    icon: fa-brands fa-linux
+    category: performance
+    status: Working knowledge
+  - name: Benchmarking
+    category: performance
+    status: Currently studying
+  - name: Roofline analysis
+    category: performance
+    status: Currently studying
+  - name: Nsight Systems
+    category: performance
+    status: Currently studying
+  - name: Nsight Compute
+    category: performance
+    status: Currently studying
+  - name: PyTorch Profiler
+    category: performance
+    status: Currently studying
+  - name: GDB
+    category: performance
+    status: Currently studying
+    icon: fa-solid fa-bug
+  - name: Java
+    icon: fa-brands fa-java
+    category: backend
+    status: Working knowledge
+  - name: Rust
+    category: backend
+    status: Working knowledge
+    icon: fa-solid fa-code
+  - name: Spring Boot
+    category: backend
+    status: Working knowledge
+  - name: Hibernate / JPA
+    category: backend
+    status: Working knowledge
+  - name: Microservices
+    icon: fa-solid fa-diagram-project
+    category: backend
+    status: Working knowledge
+  - name: PostgreSQL
+    icon: fa-solid fa-database
+    category: backend
+    status: Working knowledge
+  - name: Redis
+    icon: fa-solid fa-database
+    category: backend
+    status: Working knowledge
+  - name: Kafka / RabbitMQ
+    category: backend
+    status: Working knowledge
+  - name: Git
+    icon: fa-brands fa-git-alt
+    category: backend
+    status: Working knowledge
+  - name: AWS
+    icon: fa-brands fa-aws
+    category: cloud
+    status: Working knowledge
+  - name: Docker
+    icon: fa-brands fa-docker
+    category: cloud
+    status: Working knowledge
+  - name: Kubernetes
+    icon: fa-solid fa-cubes
+    category: cloud
+    status: Working knowledge
+  - name: Terraform
+    icon: fa-solid fa-layer-group
+    category: cloud
+    status: Working knowledge
+  - name: Swift
+    icon: fa-brands fa-swift
+    category: ios
+    status: Working knowledge
+  - name: Xcode
+    category: ios
+    status: Working knowledge
+  - name: URLSession
+    category: ios
+    status: Working knowledge
+  - name: Combine
+    category: ios
+    status: Working knowledge
+  - name: Linear algebra
+    category: mathematics
+    status: Currently studying
+  - name: Calculus
+    category: mathematics
+    status: Currently studying
+  - name: Probability
+    category: mathematics
+    status: Currently studying
+  - name: Optimization
+    category: mathematics
+    status: Currently studying
+  - name: Numerical computing
+    category: mathematics
+    status: Currently studying

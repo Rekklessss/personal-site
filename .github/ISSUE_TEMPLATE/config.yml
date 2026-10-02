@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: ❓ Ask a Question
-    url: https://github.com/alshedivat/al-folio/discussions/categories/q-a
-    about: Ask and answer al-folio related questions.
+    url: https://github.com/Rekklessss/personal-site/discussions/categories/q-a
+    about: Ask and answer personal-site related questions.
   - name: 📖 Read the documentation
-    url: https://github.com/alshedivat/al-folio/blob/main/README.md
+    url: https://github.com/Rekklessss/personal-site/blob/main/README.md
     about: Please consult the documentation before opening any issues!

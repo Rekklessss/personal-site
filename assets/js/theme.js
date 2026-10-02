@@ -3,22 +3,27 @@
 // Toggle through light, dark, and system theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
+  if (themeSetting == "light") {
+    setThemeSetting("system");
+  } else if (themeSetting == "system") {
     setThemeSetting("dark");
   } else {
-    setThemeSetting("system");
+    setThemeSetting("light");
   }
 };
 
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+  try {
+    localStorage.setItem("theme", themeSetting);
+  } catch {
+    /* Use the current page setting when storage is blocked. */
+  }
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
   applyTheme();
+  updateThemeToggle();
 };
 
 // Apply the computed dark or light theme to the website.
@@ -268,11 +273,18 @@ let transTheme = () => {
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
 // "system". Default is "system".
 let determineThemeSetting = () => {
-  let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+  let themeSetting;
+  try {
+    // Reset legacy forced selections once. Future explicit choices are retained.
+    if (localStorage.getItem("theme-preference-version") !== "2") {
+      localStorage.setItem("theme", "system");
+      localStorage.setItem("theme-preference-version", "2");
+    }
+    themeSetting = localStorage.getItem("theme");
+  } catch {
+    return document.documentElement.getAttribute("data-theme-setting") || "system";
   }
-  return themeSetting;
+  return ["light", "system", "dark"].includes(themeSetting) ? themeSetting : "system";
 };
 
 // Determine the computed theme, which can be "dark" or "light". If the theme setting is
@@ -291,6 +303,16 @@ let determineComputedTheme = () => {
   }
 };
 
+let updateThemeToggle = () => {
+  const button = document.getElementById("light-toggle");
+  if (!button) return;
+  const state = document.documentElement.getAttribute("data-theme-setting") || determineThemeSetting();
+  const next = { light: "system", system: "dark", dark: "light" }[state];
+  const label = `Theme: ${state}. Switch to ${next} theme`;
+  button.setAttribute("aria-label", label);
+  button.title = label;
+};
+
 let initTheme = () => {
   let themeSetting = determineThemeSetting();
 
@@ -298,9 +320,10 @@ let initTheme = () => {
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
+    updateThemeToggle();
     const mode_toggle = document.getElementById("light-toggle");
 
-    mode_toggle.addEventListener("click", function () {
+    mode_toggle?.addEventListener("click", function () {
       toggleThemeSetting();
     });
   });

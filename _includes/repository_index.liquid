@@ -1,0 +1,31 @@
+{% assign repository_index = site.data.repositories.repositories %}
+{% for category in site.data.repositories.categories %}
+  {% unless category.id == 'learning' %}
+    <section class="repository-group" aria-labelledby="repository-group-{{ category.id }}">
+      {% if include.exclude_featured %}
+        <h3 id="repository-group-{{ category.id }}">{{ category.title }}</h3>
+      {% else %}
+        <h2 id="repository-group-{{ category.id }}">{{ category.title }}</h2>
+      {% endif %}
+      <ul class="repository-list">
+        {% for repo in repository_index %}
+          {% if repo.category == category.id %}
+            {% unless include.exclude_featured and repo.featured %}
+              <li class="repository-item">
+                <div class="repository-item-heading">
+                  <a href="https://github.com/{{ site.data.repositories.owner }}/{{ repo.name }}" target="_blank" rel="noopener noreferrer">
+                    {{- repo.name -}}
+                  </a>
+                  {% if repo.fork -%}
+                    <span class="repository-badge">Fork</span>
+                  {%- endif %}
+                </div>
+                <p>{{ repo.summary }}</p>
+              </li>
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
+  {% endunless %}
+{% endfor %}

@@ -6,10 +6,10 @@
       ".github/agents/customize.agent.md",
       ".github/agents/docs.agent.md",
       ".github/instructions/**/*.md",
-      "CUSTOMIZE.md",
-      "INSTALL.md",
       "TROUBLESHOOTING.md",
-      "QUICKSTART.md"
+      "README.md",
+      "docs/CONTENT_WORKFLOW.md",
+      "docs/AMPLIFY_DEPLOYMENT.md"
     ]
   }
 }

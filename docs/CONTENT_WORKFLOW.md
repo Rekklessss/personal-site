@@ -1,71 +1,65 @@
-# Content Workflow
+# Content workflow
 
-This repo is set up so the day-to-day workflow stays simple:
+Edit source files, preview locally, format, and validate. Push only when ready and authorized to publish. Amplify automatically deploys changes to `main`.
 
-1. Create or update content locally.
-2. Preview the site with Docker.
-3. Format the repo.
-4. Push to `main`.
-5. Let AWS Amplify build and publish the site from `main`.
+## Sources
 
-## Local preview
+| Content                                 | Source                                                        |
+| --------------------------------------- | ------------------------------------------------------------- |
+| About and expanded personal story       | `_pages/about.md`                                             |
+| Homepage experience summaries           | `_data/home.yml`                                              |
+| Selected projects on About and Projects | `_data/home.yml`, `_includes/selected_projects.liquid`        |
+| Full experience                         | `_data/experience.yml`                                        |
+| Company logos                           | `_data/organizations.yml`, `assets/img/`                      |
+| Homepage skill groups and icons         | `_data/skills.yml`, `_includes/home_skills.liquid`            |
+| Web and PDF résumé                      | `_data/cv.yml`, `_scripts/render_resume.py`                   |
+| PDF layout                              | `assets/rendercv/design.yaml`, `settings.yaml`, `locale.yaml` |
+| Other project/repository cards          | `_data/repositories.yml`                                      |
+| Project detail pages                    | `_projects/`                                                  |
+| Research and publications               | `_pages/research.md`, `_bibliography/papers.bib`              |
+| Blog landing page and posts             | `_pages/blog.md`, `_posts/`                                   |
+| Social destinations                     | `_data/socials.yml`                                           |
+| Navigation                              | `_pages/` front matter (`nav`, `nav_order`, `permalink`)      |
+
+## Projects
+
+Selected projects use one shared card template and data list on both pages. Update `_data/home.yml` to add or change a selection. Register repository metadata in `_data/repositories.yml` and label forks accurately. Featured repositories are excluded from the lower project index to avoid duplicates.
+
+To create a longer write-up:
 
 ```bash
-npm install
-npm run dev
+npm run new:project -- "Project title" "Short description"
 ```
 
-Open [http://localhost:8080](http://localhost:8080).
+The helper creates a file in `_projects/`. It does not register a selected card or repository entry automatically. Keep those entries and their links consistent.
 
-Use `npm run dev:build` if you change dependencies or Docker-related files.
+## Blog
 
-## Create a blog post
+The blog landing page is intentionally empty until a real post is ready. Create a post with:
 
 ```bash
-npm run new:post -- "Shipping My Portfolio on AWS" engineering
+npm run new:post -- "Post title" engineering
 ```
 
-That creates a file like `_posts/2026-04-13-shipping-my-portfolio-on-aws.md`.
+Edit its description, tags and body. Remove example text before publication.
 
-After that:
+## Experience and résumé
 
-1. Update the `description`.
-2. Add tags if you want.
-3. Write the post body.
-4. Preview the result locally.
+Keep company names, titles, dates and locations consistent across home, experience and résumé data. The résumé intentionally excludes esports and Next Tech Lab. Homepage shows the three most recent entries before an expandable list. Avoid presenting study topics as demonstrated proficiency.
 
-## Create a project page
+Use the PDF setup in [README](../README.md). The first PDF page ends with Projects, followed by Publications and Skills on page two.
 
-```bash
-npm run new:project -- "Personal Portfolio" "Jekyll portfolio hosted with AWS Amplify"
-```
+## Appearance and validation
 
-That creates a file in `_projects/` with a starter structure you can fill in.
-
-## Publish changes
+Styles live in `_sass/` and are loaded by `assets/css/main.scss`. Geist and Geist Mono are self-hosted with their licenses in `assets/fonts/`. Use the shared theme variables for accents and hover states.
 
 ```bash
+npm ci
 npm run format
-git status
-git add _config.yml _pages/about.md _posts/2026-04-13-your-post.md
-git commit -m "feat: publish new blog post"
-git push origin main
+docker compose run --rm -e JEKYLL_ENV=production jekyll bundle exec jekyll build
+docker compose up
 ```
 
-Once the push lands on `main`, Amplify reads `amplify.yml`, builds the site, and publishes `_site/`. Check the deployment status in the Amplify console.
+Check http://localhost:8080 on desktop and mobile, including both themes, skill filters, experience expansion, links and the résumé download. Review `git diff` before staging specific files. Publication instructions are in [the Amplify guide](AMPLIFY_DEPLOYMENT.md).
 
-## Recommended writing rhythm
-
-- Use `about.md` for your high-level story.
-- Use `_projects/` for durable case studies.
-- Use `_posts/` for lightweight notes, lessons, experiments, and essays.
-- Keep posts short and frequent; promote the best ones into richer project pages later.
-
-## Files you will edit most often
-
-- `_pages/about.md`
-- `_posts/*.md`
-- `_projects/*.md`
-- `_data/cv.yml`
-- `_data/socials.yml`
-- `_data/repositories.yml`
+The home-only intro is `_includes/intro.liquid`, `assets/js/intro.js` and `_sass/_intro.scss`. It runs on a first visit and every homepage refresh, but skips internal navigation and browser back/forward returns, can be skipped, and is disabled for reduced motion. Theme selection defaults to the visitor’s system preference, with explicit light/system/dark choices retained.

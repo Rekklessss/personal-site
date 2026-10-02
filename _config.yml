@@ -7,17 +7,15 @@ first_name: Divyanshu
 middle_name:
 last_name: Pabia
 contact_note: >
-  This site is a living portfolio for projects, writing, and experiments. I am still filling it out, but GitHub is a good place to reach me for now.
+  I am open to conversations about AI systems, performance engineering, and research collaboration.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal portfolio, projects, and writing by Divyanshu Pabia.
-footer_text: >
-  Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> and the <a href="https://github.com/alshedivat/al-folio" target="_blank">al-folio</a> theme.
-  Hosted with <a href="https://aws.amazon.com/amplify/hosting/" target="_blank">AWS Amplify</a>.
-keywords: divyanshu pabia, software engineer, portfolio, blog, projects
+  Divyanshu Pabia's work in software systems, LLM systems, GPU computing, research, and open-source engineering.
+footer_text: ""
+keywords: divyanshu pabia, ai systems, gpu computing, inference engineering, distributed systems, performance engineering, software engineer
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: "\u269B\uFE0F" # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.svg
 
-url: https://www.thedivyanshupabia.com # the base hostname & protocol for your site
+url: https://thedivyanshupabia.com # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -53,7 +51,7 @@ external_services:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
@@ -91,13 +89,13 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: writings # blog_name will be displayed in your blog page
-blog_description: Notes on building, learning, and shipping things on the internet.
+blog_description: Notes on systems, performance, and learning from first principles.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: false
 
 related_blog_posts:
   enabled: false
@@ -114,8 +112,8 @@ giscus:
   strict: 1 # use strict identification mode
   reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
   input_position: bottom # whether to display input form below (bottom) or above (top) the comments
-  dark_theme: dark # name of the dark color scheme (preferred works well with al-folio dark mode)
-  light_theme: light # name of the light color scheme (preferred works well with al-folio light mode)
+  dark_theme: dark # name of the dark color scheme (preferred works well with personal-site dark mode)
+  light_theme: light # name of the light color scheme (preferred works well with personal-site light mode)
   emit_metadata: 0
   lang: en
 
@@ -174,26 +172,31 @@ kramdown:
 # Includes & excludes
 include: ["_pages", "_scripts"]
 exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - CONTRIBUTING.md
+  - README.md
+  - TROUBLESHOOTING.md
+  - LICENSE
+  - docs/
+  - ops/
   - amplify.yml
   - bin/
-  - CONTRIBUTING.md
-  - CUSTOMIZE.md
   - Dockerfile
   - docker-compose.yml
-  - docker-compose-slim.yml
-  - FAQ.md
   - Gemfile
   - Gemfile.lock
-  - INSTALL.md
-  - LICENSE
-  - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
+  - requirements.txt
   - purgecss.config.js
-  - README.md
-  - readme_preview/
-  - vendor
+  - assets/rendercv/design.yaml
+  - assets/rendercv/settings.yaml
+  - assets/rendercv/locale.yaml
+  - vendor/
+  - node_modules/
+  - .venv/
+  - lighthouse_results/
 keep_files:
   - CNAME
   - .nojekyll
@@ -280,7 +283,7 @@ scholar:
   bibliography_template: bib
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
-  # See https://github.com/alshedivat/al-folio/issues/357.
+  # See https://github.com/Rekklessss/personal-site/issues/357.
   bibtex_filters: [latex, smallcaps, superscript]
 
   replace_strings: true
@@ -357,7 +360,7 @@ external_links:
 # MAKE SURE imagemagick is installed and on your PATH before enabling imagemagick. In a terminal, run:
 #   convert -version
 imagemagick:
-  enabled: true # enables responsive images for your site (recommended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: true # enables responsive images for your site (recommended, see https://github.com/Rekklessss/personal-site/issues/537)
   widths:
     - 480
     - 800
@@ -449,9 +452,6 @@ third_party_libraries:
         library: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/echarts.min.js"
         dark_theme: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/theme/dark-fresh-cut.js"
     version: "5.5.0"
-  google_fonts:
-    url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:

@@ -1,19 +1,25 @@
 {
   "basics": {
     "name": "Divyanshu Pabia",
-    "label": "Software Engineer",
-    "image": "",
-    "email": "",
-    "summary": "I build software, learn in public, and use this site to share projects, writing, and experiments.",
-    "url": "https://www.thedivyanshupabia.com",
+    "label": "Systems Engineer · AI Systems at Scale",
+    "email": "thedivyanshupabia@gmail.com",
+    "summary": "I am focused on understanding and improving the systems that run modern AI models, from GPU kernels and memory behavior to compilers, inference runtimes, and distributed execution. I enjoy reading systems code, profiling bottlenecks, and building experiments that turn performance questions into measurable results. My background spans backend engineering, iOS development, and network-monitoring software for Tor, and I am now specializing in AI systems, GPU computing, and efficient LLM inference.",
+    "url": "https://thedivyanshupabia.com",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "",
-      "countryCode": "",
-      "region": ""
+      "city": "Pune",
+      "countryCode": "IN"
     },
     "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "thedivyanshupabia",
+        "url": "https://www.linkedin.com/in/thedivyanshupabia/"
+      },
+      {
+        "network": "X",
+        "username": "thedivyanshup",
+        "url": "https://x.com/thedivyanshup"
+      },
       {
         "network": "GitHub",
         "username": "Rekklessss",
@@ -21,38 +27,124 @@
       }
     ]
   },
-  "work": [],
-  "volunteer": [],
-  "education": [],
-  "awards": [],
-  "certificates": [],
-  "publications": [],
+  "work": [
+    {
+      "name": "The Tor Project",
+      "position": "Network Health Team",
+      "location": "Remote Contract",
+      "startDate": "2025-08-01",
+      "endDate": "2026-07-01",
+      "highlights": [
+        "Contributed to reimplementing the Java Tor Metrics Library in Rust to retrieve, parse, and validate network descriptors from CollecTor, focusing on memory safety and extensible parsing.",
+        "Worked on a unified descriptor pipeline using object storage, a dedicated parser service, and PostgreSQL and VictoriaMetrics exports to support historical and real-time network analysis."
+      ]
+    },
+    {
+      "name": "Infosys",
+      "position": "iOS and backend development intern",
+      "location": "Mysuru, Karnataka",
+      "startDate": "2024-03-01",
+      "endDate": "2025-02-01",
+      "highlights": [
+        "Built a Hospital Management System with a Swift iOS client and Java/Spring Boot REST APIs for staff management, bookings, and real-time updates. Implemented JWT authentication and role-based access.",
+        "Containerized backend services with Docker and supported test/staging CI/CD. Strengthened API design, OpenAPI documentation, and verification through JUnit 5 and integration tests."
+      ]
+    },
+    {
+      "name": "iOS App Development Centre",
+      "position": "Apple and Infosys iOS App Development Program",
+      "location": "Chennai, Tamil Nadu",
+      "startDate": "2023-03-01",
+      "endDate": "2024-03-01",
+      "highlights": [
+        "Built Gamergrid through the Apple and Infosys program, integrating esports events, scores, and news into a Swift iOS app. Developed practical skills in URLSession, Combine, REST API integration, pagination, and resilient data fetching."
+      ]
+    },
+    {
+      "name": "Tech Analogy",
+      "position": "Software development intern",
+      "location": "Chennai, Tamil Nadu",
+      "startDate": "2022-02-01",
+      "endDate": "2022-07-01",
+      "highlights": [
+        "Built an expense-management backend with Spring Boot and Hibernate, using Kafka and RabbitMQ for asynchronous communication. Gained hands-on experience in transaction processing, microservices, and event-driven design."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "SRM Institute of Science and Technology",
+      "area": "Computer Science and Engineering",
+      "studyType": "B.Tech",
+      "startDate": "2021-09",
+      "endDate": "2025-06",
+      "score": "8.5/10"
+    }
+  ],
+  "publications": [
+    {
+      "name": "A Decentralized Blockchain Framework for Secure, Transparent and Privacy-Preserving Toll Payment Systems",
+      "publisher": "2025 International Conference on Smart & Sustainable Technology (INCSST)",
+      "releaseDate": "2025-07",
+      "url": "https://doi.org/10.1109/INCSST64791.2025.11210370"
+    }
+  ],
   "skills": [
     {
-      "name": "Focus Areas",
-      "level": "Strong",
-      "icon": "fa-solid fa-code",
-      "keywords": ["Software engineering", "AI tooling", "Web development", "Cloud deployment", "Technical writing"]
+      "name": "Programming and systems",
+      "keywords": ["C/C++", "Python", "Java", "Rust", "Linux", "Git", "CMake"]
+    },
+    {
+      "name": "ML systems",
+      "keywords": ["PyTorch", "JAX", "Transformers", "torch.compile", "vLLM"]
+    },
+    {
+      "name": "GPU and performance",
+      "keywords": ["CUDA C++", "Triton", "parallel computing", "profiling", "Nsight Systems / Compute"]
+    },
+    {
+      "name": "Backend and cloud",
+      "keywords": ["Spring Boot", "PostgreSQL", "REST APIs", "AWS", "Docker", "Kubernetes", "Terraform"]
+    },
+    {
+      "name": "iOS development",
+      "keywords": ["Swift", "Xcode", "URLSession", "Combine"]
+    },
+    {
+      "name": "Mathematics",
+      "keywords": ["Linear algebra", "probability", "calculus", "optimization"]
     }
   ],
-  "languages": [],
   "interests": [
     {
-      "name": "Currently Exploring",
-      "icon": "fa-solid fa-lightbulb",
-      "keywords": ["AI products", "Developer tools", "Distributed systems", "Personal websites", "Learning in public"]
+      "name": "Current study",
+      "keywords": ["CUDA", "GPU kernels", "PyTorch", "inference serving", "ML compilers", "distributed systems", "performance profiling"]
     }
   ],
-  "references": [],
   "projects": [
     {
-      "name": "Personal Website",
-      "summary": "A portfolio and blog built with Jekyll and hosted on AWS Amplify with a custom domain.",
-      "highlights": [
-        "Custom domain at thedivyanshupabia.com",
-        "Automated production builds and deploys from GitHub to AWS Amplify",
-        "Local Docker preview plus simple content scaffolds for posts and projects"
-      ]
+      "name": "GeoGPT-RAG",
+      "summary": "Developed a geospatial assistant prototype combining retrieval over reference material, language-model interaction, and GIS tooling. Explored how to connect natural-language requests with spatial data and tools while keeping analysis steps inspectable.",
+      "url": "https://github.com/Rekklessss/geogpt-rag",
+      "github": "https://github.com/Rekklessss/geogpt-rag"
+    },
+    {
+      "name": "Linux virtual LIFO device",
+      "summary": "Implemented a virtual last-in, first-out character device as a loadable Linux kernel module. Worked with module and device interfaces, device-state management, and the user/kernel boundary to understand how applications interact with kernel-backed services.",
+      "url": "https://github.com/Rekklessss/Tinkering-The-Linux-Kernel",
+      "github": "https://github.com/Rekklessss/Tinkering-The-Linux-Kernel"
+    },
+    {
+      "name": "ARM microarchitecture in VHDL",
+      "summary": "Built a VHDL microarchitecture that executes a subset of ARM instructions, connecting instruction decoding, datapath behavior, and control logic. Developed a practical understanding of how instruction semantics map to hardware execution.",
+      "url": "https://github.com/Rekklessss/ARMv4T-CPU-Implementation",
+      "github": "https://github.com/Rekklessss/ARMv4T-CPU-Implementation"
+    },
+    {
+      "name": "Gamergrid",
+      "summary": "Built a native Swift app for following esports events, live scores, match statistics, and personalized news. Integrated third-party REST APIs using URLSession and Combine, with attention to pagination, resilient networking, and a responsive mobile interface.",
+      "url": "https://github.com/Rekklessss/Gamergrid",
+      "github": "https://github.com/Rekklessss/Gamergrid"
     }
   ]
 }

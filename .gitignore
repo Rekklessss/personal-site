@@ -1,15 +1,32 @@
-_site
-.bundle
-.DS_store
-.idea
-.jekyll-cache
+# Generated site and caches
+_site/
+.bundle/
+.jekyll-cache/
 .jekyll-metadata
-.ruby-version
-.sass-cache
-.tweet-cache
-.venv
-assets/libs/
-assets/rendercv/rendercv_output/*.typ
-Gemfile.lock
+.sass-cache/
+.tweet-cache/
+
+# Local dependencies and environments
 node_modules/
-vendor
+vendor/
+.venv/
+.venv-*/
+assets/libs/
+Gemfile.lock
+.ruby-version
+
+# Local credentials (keep example configuration trackable)
+.env
+.env.*
+!.env.example
+.aws/
+
+# Editor and operating-system files
+.DS_Store
+.idea/
+*.swp
+*.swo
+
+# Intermediate PDF source and generated audit reports
+assets/rendercv/rendercv_output/*.typ
+lighthouse_results/

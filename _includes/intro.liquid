@@ -1,0 +1,11 @@
+<div class="site-intro" id="site-intro" hidden aria-hidden="true">
+  <div class="site-intro-content">
+    <div class="site-intro-name" data-intro-text="{{ site.first_name }} {{ site.last_name }}">
+      {{ site.first_name }}
+      {{ site.last_name }}
+    </div>
+    <p class="site-intro-title">{{ site.data.cv.cv.headline }}</p>
+    <button class="site-intro-skip" type="button" tabindex="-1">Skip intro</button>
+  </div>
+</div>
+<script src="{{ '/assets/js/intro.js' | relative_url | bust_file_cache }}"></script>

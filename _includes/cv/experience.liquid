@@ -13,9 +13,11 @@
           {% capture start_date %}
             {% if entry.start_date %}{{ entry.start_date }}{% elsif entry.startDate %}{{ entry.startDate }}{% endif %}
           {% endcapture %}
+          {% assign start_date = start_date | strip %}
           {% capture end_date %}
             {% if entry.end_date %}{{ entry.end_date }}{% elsif entry.endDate %}{{ entry.endDate }}{% endif %}
           {% endcapture %}
+          {% assign end_date = end_date | strip %}
 
           {% if start_date != '' %}
             {% comment %} Extract year only from dates like "1933-01-01" or just use "1933" as is {% endcomment %}
@@ -28,11 +30,13 @@
 
           <table class="table-cv">
             <tbody>
-              <tr>
-                <td>
-                  <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ date }}</span>
-                </td>
-              </tr>
+              {% if date != '' %}
+                <tr>
+                  <td>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">{{ date }}</span>
+                  </td>
+                </tr>
+              {% endif %}
               {% capture location %}
                 {% if entry.location %}{{ entry.location }}{% endif %}
               {% endcapture %}
@@ -66,7 +70,11 @@
             {% if entry.name %}{{ entry.name }}{% elsif entry.company %}{{ entry.company }}{% elsif entry.organization %}{{ entry.organization }}{% endif %}
           {% endcapture %}
           {% if company_name != '' %}
-            <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ company_name }}</h6>
+            <h6 class="ml-1 ml-md-4 organization-name" style="font-size: 0.95rem">
+              {% assign organization_name = company_name | strip -%}
+              {%- include organization_logo.liquid company=organization_name %}
+              {{ company_name }}
+            </h6>
           {% endif %}
 
           {% if entry.summary %}

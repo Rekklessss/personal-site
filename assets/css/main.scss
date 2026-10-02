@@ -15,6 +15,8 @@
 
 /* Your project partials — convert these files to `@use "variables";`
    (or `@use "variables" as *;`) inside each file and qualify variables if needed. */
+@use "fonts";
+@use "intro";
 @use "themes";
 @use "layout";
 
@@ -25,11 +27,15 @@
 @use "blog";
 @use "publications";
 @use "components";
+@use "journey";
+@use "home-profile";
+@use "repository-index";
 @use "utilities";
 
 // Other specialized styles
 @use "distill";
 @use "cv";
+@use "portfolio-polish";
 @use "tabs";
 @use "teachings";
 @use "typograms";

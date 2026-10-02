@@ -1,0 +1,37 @@
+<div class="skills-widget" data-skills-widget>
+  {% assign core_skills = site.data.skills.items | where: 'core', true %}
+  <div class="skill-filters" role="group" aria-label="Filter skills">
+    <button type="button" class="skill-filter" data-category="core" aria-pressed="true">
+      Core stack <span>{{ core_skills.size }}</span>
+    </button>
+    <button type="button" class="skill-filter" data-category="all" aria-pressed="false">
+      All skills <span>{{ site.data.skills.items.size }}</span>
+    </button>
+    {% for category in site.data.skills.categories %}
+      {% assign category_items = site.data.skills.items | where: 'category', category.id %}
+      <button type="button" class="skill-filter" data-category="{{ category.id }}" aria-pressed="false">
+        <i class="fa-solid {{ category.icon }}" aria-hidden="true"></i> {{ category.label }}
+        <span>{{ category_items.size }}</span>
+      </button>
+    {% endfor %}
+  </div>
+  <div class="skill-cloud">
+    {% for skill in site.data.skills.items %}
+      {% assign skill_category = site.data.skills.categories | where: 'id', skill.category | first %}
+      <span
+        class="skill-chip{% if skill.status == 'Currently studying' %} skill-studying{% endif %}"
+        data-category="{{ skill.category }}"
+        data-core="{{ skill.core | default: false }}"
+        title="{{ skill.status }}"
+        {% unless skill.core %}
+          hidden
+        {% endunless %}
+      >
+        <i class="{{ skill.icon | default: 'fa-solid' }}{% unless skill.icon %} {{ skill_category.icon }}{% endunless %}" aria-hidden="true"></i>
+        {{ skill.name }}
+      </span>
+    {% endfor %}
+  </div>
+  <p class="skills-status" aria-live="polite">Showing {{ core_skills.size }} skills</p>
+</div>
+<script defer src="{{ '/assets/js/home-skills.js' | relative_url }}"></script>

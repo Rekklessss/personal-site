@@ -1,0 +1,23 @@
+{% assign person = include.person %}
+<div class="card mt-3 p-3 resume-contact">
+  <h3 class="card-title font-weight-medium">{{ person.name }}</h3>
+  <p>{{ person.headline | default: person.label }}</p>
+  <div class="resume-contact-links" aria-label="Contact and profiles">
+    <a href="mailto:{{ person.email }}" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
+    {% assign profiles = person.social_networks | default: person.profiles %}
+    {% for profile in profiles %}
+      {% case profile.network %}
+        {% when 'LinkedIn' %}
+          <a href="https://www.linkedin.com/in/{{ profile.username }}/" aria-label="LinkedIn" title="LinkedIn"
+            ><i class="fa-brands fa-linkedin" aria-hidden="true"></i
+          ></a>
+        {% when 'X' %}
+          <a href="https://x.com/{{ profile.username }}" aria-label="X" title="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        {% when 'GitHub' %}
+          <a href="https://github.com/{{ profile.username }}" aria-label="GitHub" title="GitHub"
+            ><i class="fa-brands fa-github" aria-hidden="true"></i
+          ></a>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>

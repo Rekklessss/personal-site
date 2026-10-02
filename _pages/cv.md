@@ -1,10 +1,10 @@
 ---
 layout: cv
-permalink: /cv/
+permalink: /resume/
 title: resume
 nav: true
-nav_order: 4
+nav_order: 6
 cv_pdf: /assets/rendercv/rendercv_output/Divyanshu_Pabia_CV.pdf
 cv_format: rendercv # options: rendercv, jsonresume
-description: A concise snapshot of my background, interests, and current focus.
+description: Education, experience, selected projects, and research.
 ---

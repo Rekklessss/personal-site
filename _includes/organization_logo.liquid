@@ -1,0 +1,6 @@
+{% assign organization = site.data.organizations[include.company] %}
+{% if organization.logo %}
+  <span class="organization-logo"><img src="{{ organization.logo | relative_url }}" alt="" loading="lazy" width="36" height="36"></span>
+{% elsif organization.initials %}
+  <span class="organization-logo organization-initials" aria-hidden="true">{{ organization.initials }}</span>
+{% endif %}

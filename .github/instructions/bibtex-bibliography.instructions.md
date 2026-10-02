@@ -7,7 +7,7 @@ excludeAgent: "code-review"
 
 ## BibTeX Format Basics
 
-The al-folio repository uses BibTeX for managing publications. All entries are stored in `_bibliography/papers.bib`.
+The personal-site repository uses BibTeX for managing publications. All entries are stored in `_bibliography/papers.bib`.
 
 ### Standard BibTeX Entry Types
 
@@ -37,9 +37,9 @@ The al-folio repository uses BibTeX for managing publications. All entries are s
 }
 ```
 
-## al-folio Custom BibTeX Keywords
+## personal-site Custom BibTeX Keywords
 
-Beyond standard BibTeX fields, al-folio supports custom keywords for rich publications display:
+Beyond standard BibTeX fields, personal-site supports custom keywords for rich publications display:
 
 ### Available Custom Keywords
 

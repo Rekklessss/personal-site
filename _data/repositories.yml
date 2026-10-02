@@ -1,6 +1,99 @@
-github_users:
-  - Rekklessss
-
-repo_description_lines_max: 2
-
-github_repos: []
+owner: Rekklessss
+categories:
+  - id: systems
+    title: Systems, hardware, and blockchain
+  - id: ai
+    title: AI, data, and computer vision
+  - id: apps
+    title: Applications and websites
+repositories:
+  - name: ARMv4T-CPU-Implementation
+    category: systems
+    summary: A VHDL processor design that executes a subset of ARM instructions.
+    featured: true
+  - name: Tinkering-The-Linux-Kernel
+    category: systems
+    summary: Linux kernel coursework, including a virtual LIFO character-device driver.
+    featured: true
+  - name: Merge-Sort-In-Assembly
+    category: systems
+    summary: Lexicographic merge sort implemented in ARM assembly and simulated in ARMSim.
+    featured: true
+  - name: fastchain
+    category: systems
+    summary: Solidity code and documentation from a blockchain project.
+  - name: geogpt-rag
+    category: ai
+    summary: An experimental geospatial assistant combining retrieval, language models, and GIS tools.
+    featured: true
+  - name: geogpt-mvp
+    category: ai
+    summary: Python prototype in the GeoGPT project series.
+  - name: State-Estimation
+    category: ai
+    summary: Kalman filtering, extended Kalman filtering, landmark localization, and data association.
+    featured: true
+  - name: Edge-Detection
+    category: ai
+    summary: Edge detection using convolution, Gaussian kernels, and Fourier methods without built-in OpenCV edge operators.
+  - name: Color-Segmentation-Using-PSO-Based-Clustering
+    category: ai
+    summary: Color segmentation using particle swarm optimization for clustering.
+  - name: Clustering-Using-Grey-Wolf-Optimizer
+    category: ai
+    summary: Grey-wolf optimization applied to clustering on the Iris dataset.
+  - name: Data-Driven-Selection-In-Artificial-Muscle
+    category: ai
+    summary: A multi-label SVM experiment for selecting artificial-muscle actuators.
+  - name: Naive-Bayes-Text-Classifier
+    category: ai
+    summary: Movie-review sentiment classification with Naive Bayes.
+  - name: Multi-Class-Image-Classifier
+    category: ai
+    summary: A neural network for Fashion-MNIST multi-class classification.
+  - name: Road-Detection
+    category: ai
+    summary: Road detection using superpixels and a neural-network classifier.
+  - name: Object-Classification-and-Image-Segmentation-using-Nature-Inspired-Algorithm
+    category: ai
+    summary: Image segmentation with differential evolution and shape classification with SVMs.
+  - name: Gravitational-Search-Algorithm
+    category: ai
+    summary: Python experiment with the gravitational search optimization algorithm.
+  - name: Feature-Selection-Using-GSA
+    category: ai
+    summary: Feature selection with gravitational search and an SVM on the Iris dataset.
+  - name: Sleeve-Classification-and-Grad-CAM-in-Tensorflow
+    category: ai
+    summary: Sleeve classification in TensorFlow with Grad-CAM visualizations.
+  - name: Google-Search-Analysis
+    category: ai
+    summary: Analysis of Google Trends interest in machine-learning topics.
+  - name: Hate-Speech-Detection-Model
+    category: ai
+    summary: A decision-tree text-classification experiment using labeled tweets.
+  - name: food-not-food
+    category: ai
+    summary: A small image-classification app for deciding whether a photo shows food.
+  - name: Gamergrid
+    category: apps
+    summary: A Swift iOS app for following esports events, scores, and news.
+    featured: true
+  - name: cloudburst-app
+    category: apps
+    summary: A weather-prediction application built from data-driven experiments.
+  - name: Tab-Links-QR
+    category: apps
+    summary: A QR-code utility for sharing a set of browser tabs across devices.
+  - name: reach.ai
+    category: apps
+    summary: An early TypeScript workspace with web and API applications.
+  - name: thedivyanshupabia.com
+    category: apps
+    summary: A TypeScript personal-website project.
+  - name: personal-site
+    category: apps
+    summary: Source for this Jekyll portfolio and its AWS Amplify deployment.
+  - name: Rekklessss.github.io
+    category: apps
+    summary: An earlier GitHub Pages website.
