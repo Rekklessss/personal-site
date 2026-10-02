@@ -16,7 +16,7 @@ latest_posts:
     <a href="mailto:thedivyanshupabia@gmail.com" aria-label="Email" title="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a>
     <a href="https://github.com/Rekklessss" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
     <a href="https://www.linkedin.com/in/thedivyanshupabia/" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-    <a href="{{ '/resume/' | relative_url }}" aria-label="Résumé" title="Résumé"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
+    <a href="{{ '/assets/rendercv/rendercv_output/Divyanshu_Pabia_CV.pdf' | relative_url }}" download="Divyanshu_Pabia_CV.pdf" aria-label="Download résumé PDF" title="Download résumé PDF"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></a>
   </div>
 
   <section class="home-section" aria-labelledby="home-about">
