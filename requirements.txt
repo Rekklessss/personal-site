@@ -1,4 +1,4 @@
-nbconvert
-pyyaml
+nbconvert==7.17.1
+pyyaml==6.0.3
 rendercv[full]==2.8
-scholarly
+scholarly==1.7.11

@@ -1,4 +1,8 @@
-FROM ruby:slim
+FROM node:24-bookworm-slim AS node-runtime
+FROM ruby:4.0.7-slim
+
+COPY --from=node-runtime /usr/local/bin/ /usr/local/bin/
+COPY --from=node-runtime /usr/local/lib/node_modules/ /usr/local/lib/node_modules/
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
@@ -9,9 +13,9 @@ FROM ruby:slim
 
 ENV DEBIAN_FRONTEND noninteractive
 
-LABEL authors="Amir Pourmand,George Araújo" \
+LABEL authors="Divyanshu Pabia" \
       description="Docker image for personal-site academic template" \
-      maintainer="Amir Pourmand"
+      maintainer="Divyanshu Pabia"
 
 # uncomment these if you are having this issue with the build:
 # /usr/local/bundle/gems/jekyll-4.3.4/lib/jekyll/site.rb:509:in `initialize': Permission denied @ rb_sysopen - /srv/jekyll/.jekyll-cache/.gitignore (Errno::EACCES)
@@ -28,11 +32,10 @@ RUN apt-get update -y && \
         imagemagick \
         inotify-tools \
         locales \
-        nodejs \
         procps \
         python3-pip \
         zlib1g-dev && \
-    pip --no-cache-dir install --upgrade --break-system-packages nbconvert
+    pip --no-cache-dir install --break-system-packages nbconvert==7.17.1
 
 # clean up
 RUN apt-get clean && \
@@ -61,7 +64,7 @@ ADD Gemfile /srv/jekyll
 WORKDIR /srv/jekyll
 
 # install jekyll and dependencies
-RUN gem install --no-document jekyll bundler
+RUN gem install --no-document bundler -v 4.0.22
 RUN bundle install --no-cache
 
 EXPOSE 8080

@@ -416,42 +416,42 @@ third_party_libraries:
   download: false # if true, download the versions of the libraries specified below and use the downloaded files
   bootstrap-table:
     integrity:
-      css: "sha256-uRX+PiRTR4ysKFRCykT8HLuRCub26LgXJZym3Yeom1c="
-      js: "sha256-4rppopQE9POKfukn2kEvhJ9Um25Cf6+IDVkARD0xh78="
+      css: "sha256-y9sX0L8XW2HkEXX+etD42rEoL3L3UjowRtxXmyxYnUM="
+      js: "sha256-aaqynVgrf6he5YP4wcobUceOkYzrjZwLOg0hsNCKMC0="
     url:
       css: "https://cdn.jsdelivr.net/npm/bootstrap-table@{{version}}/dist/bootstrap-table.min.css"
       js: "https://cdn.jsdelivr.net/npm/bootstrap-table@{{version}}/dist/bootstrap-table.min.js"
-    version: "1.22.4"
+    version: "1.27.3"
   chartjs:
     integrity:
-      js: "sha256-0q+JdOlScWOHcunpUk21uab1jW7C1deBQARHtKMcaB4="
+      js: "sha256-SERKgtTty1vsDxll+qzd4Y2cF9swY9BCq62i9wXJ9Uo="
     url:
       js: "https://cdn.jsdelivr.net/npm/chart.js@{{version}}/dist/chart.umd.min.js"
-    version: "4.4.1"
+    version: "4.5.1"
   d3:
     integrity:
-      js: "sha256-1rA678n2xEx7x4cTZ5x4wpUCj6kUMZEZ5cxLSVSFWxw="
+      js: "sha256-8glLv2FBs1lyLE/kVOtsSw8OQswQzHr5IfwVj864ZTk="
     url:
       js: "https://cdn.jsdelivr.net/npm/d3@{{version}}/dist/d3.min.js"
-    version: "7.8.5"
+    version: "7.9.0"
   diff2html:
     integrity:
-      css: "sha256-IMBK4VNZp0ivwefSn51bswdsrhk0HoMTLc2GqFHFBXg="
-      js: "sha256-eU2TVHX633T1o/bTQp6iIJByYJEtZThhF9bKz/DcbbY="
+      css: "sha256-0+zA6bKx5chGbBneKb7QUv0IY0ddJYKezIWERu/e03I="
+      js: "sha256-mXoOqduEwKvM41xkFZr+RtMNz9/SQ0FWGdmz6BAXE4s="
     url:
       css: "https://cdn.jsdelivr.net/npm/diff2html@{{version}}/bundles/css/diff2html.min.css"
       js: "https://cdn.jsdelivr.net/npm/diff2html@{{version}}/bundles/js/diff2html-ui.min.js"
-    version: "3.4.47"
+    version: "3.4.56"
   echarts:
     integrity:
       js:
-        library: "sha256-QvgynZibb2U53SsVu98NggJXYqwRL7tg3FeyfXvPOUY="
+        library: "sha256-v0oiNSTkC3fDBL7GfhIiz1UfFIgM9Cxp3ARlWOEcB7E="
         dark_theme: "sha256-sm6Ui9w41++ZCWmIWDLC18a6ki72FQpWDiYTDxEPXwU="
     url:
       js:
         library: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/echarts.min.js"
         dark_theme: "https://cdn.jsdelivr.net/npm/echarts@{{version}}/theme/dark-fresh-cut.js"
-    version: "5.5.0"
+    version: "5.6.0"
   highlightjs:
     integrity:
       css:
@@ -461,7 +461,7 @@ third_party_libraries:
       css:
         light: "https://cdn.jsdelivr.net/npm/highlight.js@{{version}}/styles/github.min.css"
         dark: "https://cdn.jsdelivr.net/npm/highlight.js@{{version}}/styles/github-dark.min.css"
-    version: "11.9.0"
+    version: "11.12.0"
   imagesloaded:
     integrity:
       js: "sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc="
@@ -470,20 +470,20 @@ third_party_libraries:
     version: "5.0.0"
   img-comparison-slider:
     integrity:
-      css: "sha256-3qTIuuUWIFnnU3LpQMjqiXc0p09rvd0dmj+WkpQXSR8="
-      js: "sha256-EXHg3x1K4oIWdyohPeKX2ZS++Wxt/FRPH7Nl01nat1o="
-      map: "sha256-3wfqS2WU5kGA/ePcgFzJXl5oSN1QsgZI4/edprTgX8w="
+      css: "sha256-t1AsWtxEgApVPM6EqtsMk++o0Dcoi47qFNp6SEdz5TY="
+      js: "sha256-ECouy2IqbRL/w0FcnO0z/ZGJmO9Vq6eJp8wpcBC7V5U="
+      map: "sha256-724qkg2h2sXE9DQMl4/Or2V5R+6Mfu18jwnMHwzejZY="
     url:
       css: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/styles.min.css"
       js: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/index.min.js"
       map: "https://cdn.jsdelivr.net/npm/img-comparison-slider@{{version}}/dist/index.js.map"
-    version: "8.0.6"
+    version: "8.0.7"
   jquery:
     integrity:
-      js: "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      js: "sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
     url:
       js: "https://cdn.jsdelivr.net/npm/jquery@{{version}}/dist/jquery.min.js"
-    version: "3.6.0"
+    version: "3.7.1"
   leaflet:
     integrity:
       css: "sha256-q9ba7o845pMPFU+zcAll8rv+gC+fSovKsOoNQ6cynuQ="
@@ -499,12 +499,12 @@ third_party_libraries:
     version: "1.9.4"
   lightbox2:
     integrity:
-      css: "sha256-uypRbsAiJcFInM/ndyI/JHpzNe6DtUNXaWEUWEPfMGo="
-      js: "sha256-A6jI5V9s1JznkWwsBaRK8kSeXLgIqQfxfnvdDOZEURY="
+      css: "sha256-WoT007zANaSefDI9onrduF7cCgBXLxfz4ppR13BMh14="
+      js: "sha256-wCsf3UahXWU4dEdmi8Otmys8tHY41MDCECc7gscAbms="
     url:
       css: "https://cdn.jsdelivr.net/npm/lightbox2@{{version}}/dist/css/lightbox.min.css"
       js: "https://cdn.jsdelivr.net/npm/lightbox2@{{version}}/dist/js/lightbox.min.js"
-    version: "2.11.5"
+    version: "2.12.0"
   mathjax:
     integrity:
       js: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
@@ -540,10 +540,10 @@ third_party_libraries:
     version: "1.1.0"
   mermaid:
     integrity:
-      js: "sha256-TtLOdUA8mstPoO6sGvHIGx2ceXrrX4KgIItO06XOn8A="
+      js: "sha256-jWB9fvHQd6iqIC4Y5iISv6mSxov+q8XPRdUaEo/mZ10="
     url:
       js: "https://cdn.jsdelivr.net/npm/mermaid@{{version}}/dist/mermaid.min.js"
-    version: "10.7.0"
+    version: "10.9.8"
   photoswipe:
     integrity:
       js: "sha256-VCBpdxvrNNxGHNuTdNqK9kPFkev2XY7DYzHdmgaB69Q="
@@ -559,10 +559,10 @@ third_party_libraries:
     version: "5.4.4"
   plotly:
     integrity:
-      js: "sha256-oy6Be7Eh6eiQFs5M7oXuPxxm9qbJXEtTpfSI93dW16Q="
+      js: "sha256-jvTGqxNp8AGWEcvNLVuKr+8j5dGe9Yw51LQkmDH+IYA="
     url:
       js: "https://cdn.jsdelivr.net/npm/plotly.js@{{version}}/dist/plotly.min.js"
-    version: "3.0.1"
+    version: "3.7.0"
   polyfill:
     url:
       js: "https://cdnjs.cloudflare.com/polyfill/v{{version}}/polyfill.min.js?features=es6"
@@ -577,27 +577,21 @@ third_party_libraries:
     version: "2.4.1"
   spotlight:
     integrity:
-      css: "sha256-Dsvkx8BU8ntk9Iv+4sCkgHRynYSQQFP6gJfBN5STFLY="
+      css: "sha256-j8stHsGJOpT08jglcsQDcCwT2n3hYc7tJAnKsxCk4nI="
     url:
       css: "https://cdn.jsdelivr.net/npm/spotlight.js@{{version}}/dist/css/spotlight.min.css"
       js: "https://cdn.jsdelivr.net/npm/spotlight.js@{{version}}/dist/spotlight.bundle.min.js"
-    version: "0.7.8"
+    version: "0.7.72"
   swiper:
     integrity:
-      css: "sha256-yUoNxsvX+Vo8Trj3lZ/Y5ZBf8HlBFsB6Xwm7rH75/9E="
-      js: "sha256-BPrwikijIybg9OQC5SYFFqhBjERYOn97tCureFgYH1E="
-      map: "sha256-lbF5CsospW93otqvWOIbbhj80CjazrZXvamD7nC7TBI="
+      css: "sha256-dMpqrlRo28kkeQw7TSGaCJuQo0utU6D3yjpz5ztvWrg="
+      js: "sha256-4eFrj9TKRcNVJkb8Mboz0UYjNVkkgbCD/DxxXei4U/M="
+      map: "sha256-O/+beDaH1aUM6+I2r9mvUrneE3YewxNQvFiml0EQFd4="
     url:
       css: "https://cdn.jsdelivr.net/npm/swiper@{{version}}/swiper-bundle.min.css"
       js: "https://cdn.jsdelivr.net/npm/swiper@{{version}}/swiper-element-bundle.min.js"
       map: "https://cdn.jsdelivr.net/npm/swiper@{{version}}/swiper-element-bundle.min.js.map"
-    version: "11.0.5"
-  swiper-map:
-    integrity:
-      js: "sha256-hlZaH8ySXX97bZaetnrtYlKuhx3oEXFz/s2IXchu6vk="
-    url:
-      js: "https://cdn.jsdelivr.net/npm/swiper@11.1.0/swiper-element-bundle.min.js.map"
-    version: "11.0.5"
+    version: "11.2.10"
   vanilla-cookieconsent:
     integrity:
       css: "sha256-ygRrixsQlBByBZiOcJamh7JByO9fP+/l5UPtKNJmRsE="
@@ -608,36 +602,36 @@ third_party_libraries:
     version: "3.1.0"
   vega:
     integrity:
-      js: "sha256-Yot/cfgMMMpFwkp/5azR20Tfkt24PFqQ6IQS+80HIZs="
-      js_map: "sha256-z0x9ICA65dPkZ0JVa9wTImfF6n7AJsKc6WlFE96/wNA="
+      js: "sha256-Rj89tqQLIOl0e07TjzftCt1QiDj5FBsc+DZnhLB7MMg="
+      js_map: "sha256-7jiiC8y3qntMYFFN6NpKM+crPdx55ldvgy6RgCAtbfA="
     url:
       js: "https://cdn.jsdelivr.net/npm/vega@{{version}}/build/vega.min.js"
       js_map: "https://cdn.jsdelivr.net/npm/vega@{{version}}/build/vega.min.js.map"
-    version: "5.27.0"
+    version: "5.33.1"
   vega-embed:
     integrity:
-      js: "sha256-FPCJ9JYCC9AZSpvC/t/wHBX7ybueZhIqOMjpWqfl3DU="
-      js_map: "sha256-VBbfSEFYSMdX/rTdGrONEHNP6BprCB7H/LpMMNt/cPA="
+      js: "sha256-EtAqz74+xZ75o33UgiouBOKWG1u7Zxu+Zh0iIXFbmdo="
+      js_map: "sha256-j6ScC7RYlVz67hKL6McOEKFzUUOg51SFnqkC+EOE8Uk="
     url:
       js: "https://cdn.jsdelivr.net/npm/vega-embed@{{version}}/build/vega-embed.min.js"
       js_map: "https://cdn.jsdelivr.net/npm/vega-embed@{{version}}/build/vega-embed.min.js.map"
-    version: "6.24.0"
+    version: "6.29.0"
   vega-lite:
     integrity:
-      js: "sha256-TvBvIS5jUN4BSy009usRjNzjI1qRrHPYv7xVLJyjUyw="
-      js_map: "sha256-l2I4D5JC23Ulsu6e3sKVe5AJ+r+DFkzkKnZS8nUGz28="
+      js: "sha256-WMJzWOJvLTGc9i9FvBekyDYvCGRQAd8uyNNB7uQJfH8="
+      js_map: "sha256-XvoxEXAVvQIeZNXQFTaU8eR1zArS51qOOmImGYzuxzo="
     url:
       js: "https://cdn.jsdelivr.net/npm/vega-lite@{{version}}/build/vega-lite.min.js"
       js_map: "https://cdn.jsdelivr.net/npm/vega-lite@{{version}}/build/vega-lite.min.js.map"
-    version: "5.16.3"
+    version: "5.23.0"
   venobox:
     integrity:
-      css: "sha256-ohJEB0/WsBOdBD+gQO/MGfyJSbTUI8OOLbQGdkxD6Cg="
-      js: "sha256-LsGXHsHMMmTcz3KqTaWvLv6ome+7pRiic2LPnzTfiSo="
+      css: "sha256-++GkIdU6/Dab7MeqbRW3oJwPNpb9AUAApitBQnoGCSo="
+      js: "sha256-GPYZDgKQAd/uGLGw3RbMbZQJP7r2YipVbLZJSsWpqG8="
     url:
       css: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.css"
       js: "https://cdn.jsdelivr.net/npm/venobox@{{version}}/dist/venobox.min.js"
-    version: "2.1.8"
+    version: "2.2.0"
 
 # -----------------------------------------------------------------------------
 # Get external JSON data

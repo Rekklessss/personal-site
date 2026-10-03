@@ -4,11 +4,13 @@
     "dev:build": "docker compose up --build",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
+    "css:purge": "purgecss -c purgecss.config.js",
     "new:post": "./bin/new-post",
     "new:project": "./bin/new-project"
   },
   "devDependencies": {
-    "@shopify/prettier-plugin-liquid": "^1.10.0",
-    "prettier": "^3.8.0"
+    "@shopify/prettier-plugin-liquid": "1.11.2",
+    "prettier": "3.9.9",
+    "purgecss": "7.0.2"
   }
 }

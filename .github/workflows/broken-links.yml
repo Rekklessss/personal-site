@@ -16,9 +16,10 @@ jobs:
   link-checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7.0.1
       - name: Check documentation links
-        uses: lycheeverse/lychee-action@v2.0.2
+        uses: lycheeverse/lychee-action@v2.9.0
         with:
           fail: true
-          args: --no-progress './*.md' './docs/**/*.md' './.github/**/*.md' './assets/fonts/geist-mono/README.md'
+          # Preview URLs are instructions for local development, not public endpoints.
+          args: --no-progress --exclude-loopback './*.md' './docs/**/*.md' './.github/**/*.md' './assets/fonts/geist-mono/README.md'

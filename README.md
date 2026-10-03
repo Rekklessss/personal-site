@@ -52,9 +52,19 @@ The web résumé reads `_data/cv.yml`. Generate the downloadable PDF with Render
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install "rendercv[full]==2.8" pyyaml
+pip install -r requirements.txt
 python _scripts/render_resume.py
 ```
+
+## Dependency maintenance
+
+Build with Ruby 4.0.7, Bundler 4.0.22 and Node.js 24 LTS. Docker, GitHub Actions and Amplify use the same Ruby and Node release lines. Install Node dependencies with `npm ci` and Python tools with `pip install -r requirements.txt`.
+
+After changing Ruby dependencies, rebuild with `docker compose up --build`. Preview startup checks the installed gems and preserves the working lockfile.
+
+Ruby gems resolve to the newest versions supported by Jekyll and its plugins. Browser libraries retain compatible major versions, with updated CDN integrity hashes. Bootstrap 4 and jQuery 3 remain paired with the site's existing MDB components. PurgeCSS stays at 7.0.2 because version 8 currently brings an audited vulnerable dependency chain. Recheck this constraint when updating dependencies.
+
+Run `npm run format:check`, `npm audit`, the production Jekyll build and `npm run css:purge` after updates. Preview desktop and mobile layouts in both themes, including navigation, skill filters and expandable experience. Verify the generated résumé when changing RenderCV.
 
 ## Documentation
 

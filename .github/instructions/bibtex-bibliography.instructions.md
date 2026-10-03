@@ -133,7 +133,7 @@ When using `pdf`, `poster`, `preview`, or similar fields:
    docker compose down
    docker compose up
    # Check output for "ERROR" or "Invalid bibtex"
-   # Publications should render at http://localhost:8080/publications/
+   # Publications should render at http://localhost:8080/research/
    ```
 3. **Publication page:** Open publications page and verify entries display correctly
 
@@ -170,5 +170,5 @@ When working with BibTeX:
 
 - Follow the standard format shown in examples above
 - Always test locally with `docker compose up` after changes
-- Check the publications page at http://localhost:8080/publications to verify display
+- Check the publications page at http://localhost:8080/research to verify display
 - Only search for additional details if encountering error messages not mentioned here

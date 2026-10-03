@@ -4,21 +4,23 @@ frontend:
     preBuild:
       commands:
         - sudo yum install -y ImageMagick
-        - rvm install 3.3.5
-        - rvm use 3.3.5
+        - rvm install 4.0.7
+        - rvm use 4.0.7
         - export LANG=C.UTF-8 LC_ALL=C.UTF-8
         - ruby -e 'abort "Ruby needs UTF-8" unless Encoding.default_external == Encoding::UTF_8'
-        - gem install bundler -v 4.0.4 --no-document
+        - gem install bundler -v 4.0.22 --no-document
         - bundle config set --local path vendor/bundle
         - bundle install --jobs 4 --retry 3
-        - python3 -m pip install --user --upgrade nbconvert
+        - python3 -m pip install --user nbconvert==7.17.1
         - export PATH="$HOME/.local/bin:$PATH"
         - "$HOME/.local/bin/jupyter nbconvert --version"
-        - npm install --global purgecss@7.0.2
+        - nvm install 24
+        - nvm use 24
+        - npm ci
     build:
       commands:
         - PATH="$HOME/.local/bin:$PATH" LANG=C.UTF-8 LC_ALL=C.UTF-8 JEKYLL_ENV=production bundle exec jekyll build
-        - purgecss -c purgecss.config.js
+        - npm run css:purge
   artifacts:
     baseDirectory: _site
     files:
