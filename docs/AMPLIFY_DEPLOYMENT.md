@@ -11,6 +11,10 @@ This site is a static Jekyll site hosted by AWS Amplify. The Amplify app `person
 
 The site URL is configured in [`_config.yml`](../_config.yml) as `https://thedivyanshupabia.com`, with an empty `baseurl`. Amplify redirects `www.thedivyanshupabia.com` to the apex domain with a permanent redirect.
 
+## Ruby runtime selection
+
+Use `rvm install ruby-4.0.7` and `rvm use ruby-4.0.7` with the explicit `ruby-` interpreter prefix. The RVM version bundled in Amplify's build image does not infer MRI from bare `4.x` versions and fails with `Unknown ruby interpreter version` before installation. The build checks the selected Ruby version before installing gems. Keep this runtime aligned with Docker and GitHub Actions when upgrading it.
+
 ## Connect the Hostinger domain
 
 Add `thedivyanshupabia.com` under Amplify **Hosting → Custom domains**. Choose manual DNS configuration if you want to keep DNS at Hostinger. Add the exact certificate validation and domain records shown by Amplify in Hostinger DNS. Keep the existing EC2 records until Amplify reports the certificate and domain are available and the Amplify URL works. Then replace the website records, including `www` if configured, and verify HTTPS on both names. Preserve unrelated records such as MX and TXT records used for email.

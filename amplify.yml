@@ -4,8 +4,10 @@ frontend:
     preBuild:
       commands:
         - sudo yum install -y ImageMagick
-        - rvm install 4.0.7
-        - rvm use 4.0.7
+        # Amplify's older RVM only infers MRI for bare Ruby 1.x–3.x versions.
+        - rvm install ruby-4.0.7
+        - rvm use ruby-4.0.7
+        - ruby -e 'abort "Expected Ruby 4.0.7" unless RUBY_VERSION == "4.0.7"'
         - export LANG=C.UTF-8 LC_ALL=C.UTF-8
         - ruby -e 'abort "Ruby needs UTF-8" unless Encoding.default_external == Encoding::UTF_8'
         - gem install bundler -v 4.0.22 --no-document
